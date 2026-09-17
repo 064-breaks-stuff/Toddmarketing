@@ -1,0 +1,32 @@
+:root {
+  --tm-blue: #003af9;
+  --tm-blue-bright: #1b55ff;
+  --tm-blue-soft: #8facff;
+  --tm-ink: #111216;
+  --tm-charcoal: #1e1e1e;
+  --tm-slate: #4d4a59;
+  --tm-gray: #bdb9cd;
+  --tm-paper: #fdfdff;
+
+  --tm-line-dark: rgb(253 253 255 / 12%);
+  --tm-line-dark-strong: rgb(253 253 255 / 22%);
+  --tm-line-light: rgb(17 18 22 / 13%);
+
+  --font-display: "Orbitron", Arial, sans-serif;
+  --font-body: "Inter", Arial, sans-serif;
+
+  --content-width: 1240px;
+  --gutter: clamp(1.25rem, 3vw, 3.5rem);
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6.5rem;
+  --space-7: 9rem;
+
+  --header-height: 5.5rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
