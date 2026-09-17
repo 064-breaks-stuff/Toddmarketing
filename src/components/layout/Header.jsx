@@ -4,6 +4,8 @@ import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { CONTACT_PATH, navItems } from '../../app/siteConfig';
 import Button from '../ui/Button';
 
+const priorityDesktopItems = ['Home', 'Ecosystem', 'Services'];
+
 export default function Header({ darkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
@@ -34,9 +36,33 @@ export default function Header({ darkMode }) {
           />
         </Link>
 
+        <nav className="site-nav" aria-label="Primary navigation">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.to === '/'}
+              className={({ isActive }) =>
+                [
+                  'site-nav__link',
+                  priorityDesktopItems.includes(item.label)
+                    ? 'site-nav__link--priority'
+                    : 'site-nav__link--secondary',
+                  isActive ? 'is-active' : ''
+                ]
+                  .filter(Boolean)
+                  .join(' ')
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+
         <div className="site-header__actions">
           <Button to={CONTACT_PATH} variant="header">
-            Book a Growth Systems Audit
+            <span className="header-cta__full">Book a Growth Systems Audit</span>
+            <span className="header-cta__short">Book an Audit</span>
           </Button>
 
           <button
@@ -64,35 +90,20 @@ export default function Header({ darkMode }) {
             Todd Marketing / Navigate
           </p>
 
-          <nav className="menu-overlay__links" aria-label="Mobile navigation">
-            {navItems.map((item, index) => {
-              if (item.disabled) {
-                return (
-                  <span
-                    className="menu-overlay__link menu-overlay__link--disabled"
-                    key={item.label}
-                  >
-                    <span>0{index + 1}</span>
-                    {item.label}
-                    <small>Building next</small>
-                  </span>
-                );
-              }
-
-              return (
-                <NavLink
-                  className="menu-overlay__link"
-                  end={item.to === '/'}
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <span>0{index + 1}</span>
-                  {item.label}
-                  <ArrowUpRight size={22} aria-hidden="true" />
-                </NavLink>
-              );
-            })}
+          <nav className="menu-overlay__links" aria-label="Site navigation">
+            {navItems.map((item, index) => (
+              <NavLink
+                className="menu-overlay__link"
+                end={item.to === '/'}
+                key={item.to}
+                to={item.to}
+                onClick={() => setMenuOpen(false)}
+              >
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <strong>{item.label}</strong>
+                <ArrowUpRight size={22} aria-hidden="true" />
+              </NavLink>
+            ))}
           </nav>
 
           <div className="menu-overlay__footer">
