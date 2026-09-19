@@ -37,10 +37,13 @@ body {
 .section-title {
   max-width: 13ch;
   margin: 0;
-  font-size: clamp(2.5rem, 5.2vw, 5.9rem);
+  padding-bottom: 0.09em;
+  overflow-wrap: anywhere;
+  font-size: clamp(2.4rem, 4.8vw, 5.5rem);
   font-weight: 500;
-  letter-spacing: -0.08em;
-  line-height: 0.91;
+  letter-spacing: -0.075em;
+  line-height: 0.94;
+  text-wrap: balance;
 }
 
 .section-copy {
@@ -48,6 +51,18 @@ body {
   margin: 0;
   color: var(--tm-slate);
   font-size: clamp(1rem, 1.3vw, 1.16rem);
+}
+
+.hero h1,
+.interior-hero h1,
+.contact-page h1,
+.accountability-section h2,
+.not-found-page h1,
+.services-intro-section h2,
+.process-accordion-section h2 {
+  padding-bottom: 0.1em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .back-link {
@@ -74,6 +89,14 @@ body {
 
 .back-link--light:hover {
   color: var(--tm-paper);
+}
+
+@media (max-width: 620px) {
+  .section-title {
+    max-width: 11ch;
+    font-size: clamp(2.45rem, 11vw, 4.3rem);
+    line-height: 0.96;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

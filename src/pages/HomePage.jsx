@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import GrowthFlow from '../components/brand/GrowthFlow';
 import SystemGrid from '../components/brand/SystemGrid';
 import Button from '../components/ui/Button';
+import SystemAccordion from '../components/home/SystemAccordion';
+import ServiceShowcase from '../components/home/ServiceShowcase';
 import { CONTACT_PATH, systemStages } from '../app/siteConfig';
 
 export default function HomePage() {
@@ -116,20 +118,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="system-stage-list">
-            {systemStages.map((stage) => (
-              <article className="system-stage" key={stage.number}>
-                <span className="system-stage__number">{stage.number}</span>
-
-                <div>
-                  <h3>{stage.title}</h3>
-                  <p className="system-stage__label">{stage.shortLabel}</p>
-                </div>
-
-                <p>{stage.detail}</p>
-              </article>
-            ))}
-          </div>
+          <SystemAccordion stages={systemStages} />
 
           <Link className="system-section__link" to="/ecosystem">
             Enter the full Growth System
@@ -138,40 +127,61 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="practices-section">
+      <section className="services-intro-section">
         <div className="container">
           <p className="section-label">Three practices</p>
 
-          <div className="practices-grid">
-            <article>
-              <span>01</span>
-              <h2>Conversion architecture.</h2>
-              <p>
-                Websites and funnels that turn serious attention into a clear
-                next step.
-              </p>
-            </article>
+          <div className="services-intro-section__heading">
+            <h2 className="section-title">
+              Build the layer that creates the next opportunity.
+            </h2>
 
-            <article>
-              <span>02</span>
-              <h2>Demand generation.</h2>
-              <p>
-                Google Ads, Meta Ads, and Local Services Ads aligned to intent,
-                offers, and signal quality.
-              </p>
-            </article>
-
-            <article>
-              <span>03</span>
-              <h2>Revenue operations.</h2>
-              <p>
-                CRM structure, GoHighLevel, n8n, routing, and automation that
-                protect the opportunity after it arrives.
-              </p>
-            </article>
+            <p className="section-copy">
+              Start with the immediate constraint. Connect the wider system
+              when the business is ready to make every handoff stronger.
+            </p>
           </div>
         </div>
       </section>
+
+      <ServiceShowcase
+        index="01"
+        eyebrow="Conversion architecture"
+        title="Make every serious visit easier to act on."
+        copy="Websites and funnels should do more than look credible. They should clarify the offer, reduce hesitation, and move qualified demand into a measurable next step."
+        capabilities={[
+          'Website and landing-page architecture',
+          'Offer, messaging, and CTA hierarchy',
+          'Form, calendar, CRM, and tracking handoff'
+        ]}
+        visual="conversion"
+      />
+
+      <ServiceShowcase
+        index="02"
+        eyebrow="Demand generation"
+        title="Create demand around intent—not noise."
+        copy="Paid acquisition works best when channel strategy, offer clarity, landing experiences, and sales feedback are designed as one connected system."
+        capabilities={[
+          'Google Ads and high-intent search capture',
+          'Meta acquisition and remarketing systems',
+          'Local Services Ads and local lead flow'
+        ]}
+        visual="demand"
+      />
+
+      <ServiceShowcase
+        index="03"
+        eyebrow="Revenue operations"
+        title="Keep opportunity moving after it arrives."
+        copy="CRM architecture and automation create the structure behind faster routing, cleaner follow-up, better booking processes, and more useful revenue visibility."
+        capabilities={[
+          'GoHighLevel or existing CRM architecture',
+          'n8n orchestration and data movement',
+          'Routing, follow-up, booking, and reactivation'
+        ]}
+        visual="operations"
+      />
 
       <section className="accountability-section">
         <div className="accountability-section__arch" aria-hidden="true" />
