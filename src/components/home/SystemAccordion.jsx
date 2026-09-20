@@ -1,80 +1,96 @@
 import { useId, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-function StageVisual({ stage }) {
-  if (stage.title === 'Demand') {
-    return (
-      <svg viewBox="0 0 160 100" aria-hidden="true">
-        <circle cx="28" cy="50" r="7" />
-        <circle cx="74" cy="28" r="7" />
-        <circle cx="74" cy="72" r="7" />
-        <circle cx="132" cy="50" r="9" />
-        <path d="M35 50h26l7-17M35 50h26l7 17M81 28h38M81 72h38" />
-      </svg>
-    );
+const stages = [
+  {
+    number: '01',
+    title: 'Demand',
+    label: 'Demand in',
+    description:
+      'Create qualified attention through search, paid social, and local-service channels aligned to real buying intent.',
+    detail:
+      'Demand generation begins by aligning the offer, market, service area, and channel with the moment a buyer is actively looking for help.',
+    signals: ['Google Ads', 'Meta Ads', 'Local Services Ads'],
+    visual: 'demand'
+  },
+  {
+    number: '02',
+    title: 'Capture',
+    label: 'Intent captured',
+    description:
+      'Give that attention a clear next step through conversion architecture, landing experiences, and friction-light pathways.',
+    detail:
+      'The conversion path should make the offer obvious, establish trust quickly, and move visitors toward one useful action instead of multiple competing decisions.',
+    signals: ['Landing pages', 'Offer clarity', 'Forms and calendars'],
+    visual: 'capture'
+  },
+  {
+    number: '03',
+    title: 'Convert',
+    label: 'Lead routed',
+    description:
+      'Route, qualify, and respond through CRM intelligence that preserves source, context, ownership, and urgency.',
+    detail:
+      'A lead becomes a usable opportunity only when the correct team member receives it quickly with the information needed to take the next step.',
+    signals: ['CRM intelligence', 'Lead routing', 'Pipeline visibility'],
+    visual: 'convert'
+  },
+  {
+    number: '04',
+    title: 'Retain',
+    label: 'Follow-up active',
+    description:
+      'Keep opportunity moving through timely nurture, booking workflows, reactivation, and relationship continuity.',
+    detail:
+      'Follow-up should be consistent without becoming impersonal. Automation protects response time while the business keeps the right human moments in the journey.',
+    signals: ['SMS and email', 'Booking workflows', 'Reactivation'],
+    visual: 'retain'
+  },
+  {
+    number: '05',
+    title: 'Optimize',
+    label: 'Revenue visible',
+    description:
+      'Return outcome signals upstream so budgets, offers, automation, and customer journeys improve with context.',
+    detail:
+      'The strongest next decision is informed by what happened after the click: which source created the opportunity, what progressed, and where momentum slowed.',
+    signals: ['Attribution', 'Reporting', 'Iteration'],
+    visual: 'optimize'
   }
+];
 
-  if (stage.title === 'Capture') {
-    return (
-      <svg viewBox="0 0 160 100" aria-hidden="true">
-        <rect x="24" y="16" width="72" height="68" rx="2" />
-        <path d="M38 32h44M38 42h30M38 59h44" />
-        <rect x="38" y="54" width="22" height="8" rx="1" />
-        <path d="M105 50h30" />
-        <circle cx="140" cy="50" r="8" />
-      </svg>
-    );
-  }
-
-  if (stage.title === 'Convert') {
-    return (
-      <svg viewBox="0 0 160 100" aria-hidden="true">
-        <rect x="18" y="16" width="57" height="68" rx="2" />
-        <circle cx="38" cy="40" r="8" />
-        <path d="M26 64c3-10 8-15 12-15s9 5 12 15M54 36h12M54 46h12M54 56h9" />
-        <path d="M88 50h28" />
-        <rect x="119" y="34" width="24" height="32" rx="2" />
-        <path d="M125 44h12M125 51h12M125 58h8" />
-      </svg>
-    );
-  }
-
-  if (stage.title === 'Retain') {
-    return (
-      <svg viewBox="0 0 160 100" aria-hidden="true">
-        <circle cx="28" cy="50" r="7" />
-        <circle cx="77" cy="24" r="7" />
-        <circle cx="77" cy="76" r="7" />
-        <circle cx="128" cy="50" r="9" />
-        <path d="M35 50h22l14-20M35 50h22l14 20M84 24h35M84 76h35" />
-        <path d="M124 33v-9M124 76v-9" />
-      </svg>
-    );
-  }
-
+function StageVisual({ type }) {
   return (
-    <svg viewBox="0 0 160 100" aria-hidden="true">
-      <path d="M22 74V28M22 74h112" />
-      <path d="M35 63l28-16 22 8 38-32" />
-      <circle cx="35" cy="63" r="5" />
-      <circle cx="63" cy="47" r="5" />
-      <circle cx="85" cy="55" r="5" />
-      <circle cx="123" cy="23" r="7" />
-      <path d="M119 23h16M127 15v16" />
-    </svg>
+    <div
+      className={`system-accordion__visual system-accordion__visual--${type}`}
+      aria-hidden="true"
+    >
+      <span className="system-accordion__visual-grid" />
+
+      <span className="system-accordion__visual-node system-accordion__visual-node--one" />
+      <span className="system-accordion__visual-node system-accordion__visual-node--two" />
+      <span className="system-accordion__visual-node system-accordion__visual-node--three" />
+
+      <span className="system-accordion__visual-line system-accordion__visual-line--one" />
+      <span className="system-accordion__visual-line system-accordion__visual-line--two" />
+
+      <span className="system-accordion__visual-label">
+        System signal active
+      </span>
+    </div>
   );
 }
 
-export default function SystemAccordion({ stages }) {
+export default function SystemAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const sectionId = useId();
+  const accordionId = useId();
 
   return (
     <div className="system-accordion">
       {stages.map((stage, index) => {
         const isActive = activeIndex === index;
-        const panelId = `${sectionId}-panel-${index}`;
-        const buttonId = `${sectionId}-button-${index}`;
+        const triggerId = `${accordionId}-trigger-${stage.number}`;
+        const panelId = `${accordionId}-panel-${stage.number}`;
 
         return (
           <article
@@ -84,44 +100,52 @@ export default function SystemAccordion({ stages }) {
             key={stage.number}
           >
             <button
-              className="system-accordion__trigger"
               type="button"
-              id={buttonId}
+              className="system-accordion__trigger"
+              onClick={() => setActiveIndex(index)}
               aria-expanded={isActive}
               aria-controls={panelId}
-              onClick={() => setActiveIndex(isActive ? -1 : index)}
+              id={triggerId}
             >
               <span className="system-accordion__number">{stage.number}</span>
 
-              <span className="system-accordion__title-wrap">
+              <span className="system-accordion__title-group">
                 <strong>{stage.title}</strong>
-                <small>{stage.shortLabel}</small>
+                <small>{stage.label}</small>
               </span>
 
-              <span className="system-accordion__icon" aria-hidden="true">
-                <ChevronDown size={19} />
+              <span className="system-accordion__summary">
+                {stage.description}
+              </span>
+
+              <span
+                className="system-accordion__icon"
+                aria-hidden="true"
+              >
+                <ChevronDown size={20} />
               </span>
             </button>
 
-            <div
-              className="system-accordion__panel"
-              id={panelId}
-              role="region"
-              aria-labelledby={buttonId}
-              hidden={!isActive}
-            >
-              <div className="system-accordion__panel-copy">
-                <p>{stage.detail}</p>
+            {isActive && (
+              <div
+                className="system-accordion__panel"
+                id={panelId}
+                role="region"
+                aria-labelledby={triggerId}
+              >
+                <div className="system-accordion__panel-copy">
+                  <p>{stage.detail}</p>
 
-                <span className="system-accordion__status">
-                  System stage / {stage.number}
-                </span>
-              </div>
+                  <ul className="system-accordion__signals">
+                    {stage.signals.map((signal) => (
+                      <li key={signal}>{signal}</li>
+                    ))}
+                  </ul>
+                </div>
 
-              <div className="system-accordion__visual">
-                <StageVisual stage={stage} />
+                <StageVisual type={stage.visual} />
               </div>
-            </div>
+            )}
           </article>
         );
       })}
