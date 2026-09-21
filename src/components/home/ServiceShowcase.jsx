@@ -1,135 +1,166 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
+const services = [
+  {
+    number: '01',
+    title: 'Conversion Architecture.',
+    description:
+      'Websites and funnels that give serious buyers a clear next step.',
+    items: [
+      'Website and landing-page architecture',
+      'Offer, messaging, and CTA hierarchy',
+      'Forms, calendars, CRM, and tracking handoff'
+    ],
+    href: '/services/websites-funnels',
+    type: 'conversion'
+  },
+  {
+    number: '02',
+    title: 'Demand Generation.',
+    description:
+      'Paid demand built around intent—not activity for activity’s sake.',
+    items: [
+      'Google Ads and search-intent capture',
+      'Meta acquisition and remarketing',
+      'Local Services Ads and local lead flow'
+    ],
+    href: '/services/advertising',
+    type: 'demand'
+  },
+  {
+    number: '03',
+    title: 'Revenue Operations.',
+    description:
+      'CRM and automation that keep opportunity moving after it arrives.',
+    items: [
+      'GoHighLevel or existing CRM systems',
+      'n8n orchestration and data movement',
+      'Routing, follow-up, booking, and visibility'
+    ],
+    href: '/services/crm-automation',
+    type: 'operations'
+  }
+];
+
 function ConversionVisual() {
   return (
-    <div className="service-visual service-visual--conversion" aria-hidden="true">
-      <div className="service-visual__page">
-        <span className="service-visual__page-topline" />
-        <span className="service-visual__page-heading" />
-        <span className="service-visual__page-copy" />
-        <span className="service-visual__page-copy service-visual__page-copy--short" />
-        <span className="service-visual__page-cta" />
-      </div>
+    <div className="service-showcase__visual service-showcase__visual--conversion">
+      <div className="service-showcase__browser">
+        <div className="service-showcase__browser-top">
+          <span />
+          <span />
+          <span />
+        </div>
 
-      <div className="service-visual__form">
-        <span />
-        <span />
-        <span />
-        <i />
+        <div className="service-showcase__browser-title" />
+        <div className="service-showcase__browser-copy" />
+        <div className="service-showcase__browser-cta" />
+        <div className="service-showcase__browser-form" />
       </div>
-
-      <div className="service-visual__lead-dot" />
-      <div className="service-visual__conversion-path" />
     </div>
   );
 }
 
 function DemandVisual() {
   return (
-    <div className="service-visual service-visual--demand" aria-hidden="true">
-      <div className="service-visual__demand-source service-visual__demand-source--one">
-        <span>Google</span>
-      </div>
+    <div className="service-showcase__visual service-showcase__visual--demand">
+      <div className="service-showcase__constellation">
+        <div className="service-showcase__source-node service-showcase__source-node--one">
+          Google
+        </div>
 
-      <div className="service-visual__demand-source service-visual__demand-source--two">
-        <span>Meta</span>
-      </div>
+        <div className="service-showcase__source-node service-showcase__source-node--two">
+          Meta
+        </div>
 
-      <div className="service-visual__demand-source service-visual__demand-source--three">
-        <span>LSA</span>
-      </div>
+        <div className="service-showcase__source-node service-showcase__source-node--three">
+          LSA
+        </div>
 
-      <div className="service-visual__intent-field">
-        <span />
-        <span />
-        <span />
-        <strong>Qualified intent</strong>
-      </div>
+        <div className="service-showcase__intent-core">
+          Qualified
+          <br />
+          Demand
+        </div>
 
-      <div className="service-visual__demand-route service-visual__demand-route--one" />
-      <div className="service-visual__demand-route service-visual__demand-route--two" />
-      <div className="service-visual__demand-route service-visual__demand-route--three" />
+        <span className="service-showcase__intent-line service-showcase__intent-line--one" />
+        <span className="service-showcase__intent-line service-showcase__intent-line--two" />
+        <span className="service-showcase__intent-line service-showcase__intent-line--three" />
+        <span className="service-showcase__intent-pulse" />
+      </div>
     </div>
   );
 }
 
 function OperationsVisual() {
   return (
-    <div className="service-visual service-visual--operations" aria-hidden="true">
-      <div className="service-visual__workflow-node service-visual__workflow-node--lead">
-        <span>Lead</span>
-      </div>
+    <div className="service-showcase__visual service-showcase__visual--operations">
+      <div className="service-showcase__workflow">
+        <div className="service-showcase__workflow-node service-showcase__workflow-node--lead">
+          Lead
+        </div>
 
-      <div className="service-visual__workflow-node service-visual__workflow-node--crm">
-        <span>CRM</span>
-      </div>
+        <div className="service-showcase__workflow-node service-showcase__workflow-node--crm">
+          CRM
+        </div>
 
-      <div className="service-visual__workflow-node service-visual__workflow-node--route">
-        <span>Route</span>
-      </div>
+        <div className="service-showcase__workflow-node service-showcase__workflow-node--followup">
+          Follow-Up
+        </div>
 
-      <div className="service-visual__workflow-node service-visual__workflow-node--followup">
-        <span>Follow-up</span>
-      </div>
+        <div className="service-showcase__workflow-node service-showcase__workflow-node--booking">
+          Booked
+        </div>
 
-      <div className="service-visual__workflow-node service-visual__workflow-node--booking">
-        <span>Booked</span>
+        <span className="service-showcase__workflow-line service-showcase__workflow-line--one" />
+        <span className="service-showcase__workflow-line service-showcase__workflow-line--two" />
+        <span className="service-showcase__workflow-line service-showcase__workflow-line--three" />
       </div>
-
-      <div className="service-visual__workflow-line service-visual__workflow-line--one" />
-      <div className="service-visual__workflow-line service-visual__workflow-line--two" />
-      <div className="service-visual__workflow-line service-visual__workflow-line--three" />
-      <div className="service-visual__workflow-line service-visual__workflow-line--four" />
     </div>
   );
 }
 
-const visuals = {
-  conversion: ConversionVisual,
-  demand: DemandVisual,
-  operations: OperationsVisual
-};
+function ServiceVisual({ type }) {
+  if (type === 'conversion') return <ConversionVisual />;
+  if (type === 'demand') return <DemandVisual />;
+  return <OperationsVisual />;
+}
 
-export default function ServiceShowcase({
-  index,
-  eyebrow,
-  title,
-  copy,
-  capabilities,
-  visual,
-  to = '/contact',
-  linkLabel = 'Book a Growth Systems Audit'
-}) {
-  const Visual = visuals[visual];
-
+export default function ServiceShowcase() {
   return (
-    <section className={`service-showcase service-showcase--${visual}`}>
-      <div className="container service-showcase__inner">
-        <div className="service-showcase__meta">
-          <span>{index}</span>
-          <p>{eyebrow}</p>
-        </div>
+    <section className="service-showcase">
+      {services.map((service) => (
+        <article
+          className={`service-showcase__feature service-showcase__feature--${service.type}`}
+          key={service.number}
+        >
+          <div className="container">
+            <div className="service-showcase__content">
+              <span className="service-showcase__number">
+                {service.number}
+              </span>
 
-        <div className="service-showcase__content">
-          <h2>{title}</h2>
+              <h2>{service.title}</h2>
 
-          <p className="service-showcase__copy">{copy}</p>
+              <p>{service.description}</p>
 
-          <ul className="service-showcase__capabilities">
-            {capabilities.map((capability) => (
-              <li key={capability}>{capability}</li>
-            ))}
-          </ul>
+              <ul className="service-showcase__list">
+                {service.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
 
-          <Link className="service-showcase__link" to={to}>
-            <span>{linkLabel}</span>
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </Link>
-        </div>
+              <Link className="service-showcase__link" to={service.href}>
+                Explore {service.title.replace('.', '')}
+                <ArrowUpRight size={17} aria-hidden="true" />
+              </Link>
+            </div>
 
-        <Visual />
-      </div>
+            <ServiceVisual type={service.type} />
+          </div>
+        </article>
+      ))}
     </section>
   );
 }

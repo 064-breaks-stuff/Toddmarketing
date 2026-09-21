@@ -1,23 +1,30 @@
 import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import PageRail from '../components/ui/PageRail';
 import { CONTACT_PATH } from '../app/siteConfig';
 
-const practices = [
+const services = [
   {
     number: '01',
-    title: 'Conversion architecture',
-    copy: 'Websites, landing pages, offer systems, and conversion paths designed to move qualified attention into clear next steps.'
+    title: 'Conversion Architecture',
+    description:
+      'Websites, landing pages, offers, and conversion paths that give serious buyers a clear next step.',
+    to: '/services/websites-funnels'
   },
   {
     number: '02',
-    title: 'Demand generation',
-    copy: 'Google Ads, Meta Ads, and Local Services Ads aligned to real intent, offer clarity, and conversion readiness.'
+    title: 'Demand Generation',
+    description:
+      'Google Ads, Meta Ads, and Local Services Ads aligned to intent, offer clarity, and downstream lead quality.',
+    to: '/services/advertising'
   },
   {
     number: '03',
-    title: 'Revenue operations',
-    copy: 'CRM intelligence, GoHighLevel, n8n automation, lead routing, follow-up, and visibility systems built around the opportunity lifecycle.'
+    title: 'Revenue Operations',
+    description:
+      'CRM intelligence, GoHighLevel, n8n workflows, routing, follow-up, booking, and visibility systems.',
+    to: '/services/crm-automation'
   }
 ];
 
@@ -39,28 +46,40 @@ export default function ServicesPage() {
           </h1>
 
           <p>
-            Each practice can solve an immediate business problem. Together,
-            they create the infrastructure that keeps opportunity moving.
+            Each service can solve an immediate business problem. Together, they
+            create the infrastructure that keeps opportunity moving.
           </p>
         </div>
       </section>
 
-      <section className="interior-list-section">
-        <div className="container interior-list">
-          {practices.map((practice) => (
-            <article key={practice.number}>
-              <span>{practice.number}</span>
-              <h2>{practice.title}</h2>
-              <p>{practice.copy}</p>
-            </article>
-          ))}
+      <section className="services-index">
+        <div className="container">
+          <p className="section-label">Choose your starting point</p>
+
+          <div className="services-index__list">
+            {services.map((service) => (
+              <Link className="services-index__item" key={service.to} to={service.to}>
+                <span className="services-index__number">{service.number}</span>
+
+                <div>
+                  <h2>{service.title}</h2>
+                  <p>{service.description}</p>
+                </div>
+
+                <ArrowUpRight size={22} aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="interior-cta-section">
         <div className="container">
           <h2>Start with the layer that matters most right now.</h2>
-          <Button to={CONTACT_PATH}>Book a Growth Systems Audit</Button>
+
+          <Button to={CONTACT_PATH}>
+            Book a Growth Systems Audit
+          </Button>
         </div>
       </section>
 
