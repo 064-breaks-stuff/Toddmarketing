@@ -113,10 +113,10 @@ function AdvertisingVisual() {
         <small>High-intent search</small>
       </div>
 
-      <div className="advertising-hero__channel advertising-hero__channel--meta">
+      <div className="advertising-hero__channel advertising-hero__channel--gbp">
         <span className="advertising-hero__channel-number">02</span>
-        <strong>Meta Ads</strong>
-        <small>Demand creation</small>
+        <strong>Google Business Profile</strong>
+        <small>Local discovery</small>
       </div>
 
       <div className="advertising-hero__channel advertising-hero__channel--lsa">
@@ -126,7 +126,7 @@ function AdvertisingVisual() {
       </div>
 
       <span className="advertising-hero__line advertising-hero__line--google" />
-      <span className="advertising-hero__line advertising-hero__line--meta" />
+      <span className="advertising-hero__line advertising-hero__line--gbp" />
       <span className="advertising-hero__line advertising-hero__line--lsa" />
 
       <div className="advertising-hero__qualification">
@@ -156,7 +156,7 @@ function AdvertisingVisual() {
 
       <div className="service-visual__footer">
         <span>Channel role</span>
-        <span>Offer match</span>
+        <span>Local visibility</span>
         <span>Lead quality loop</span>
       </div>
     </HeroFrame>

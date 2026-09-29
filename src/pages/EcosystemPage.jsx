@@ -26,117 +26,117 @@ export default function EcosystemPage() {
 
           <p>
             Each stage is designed to make the next one stronger—from the first
-            signal of demand to the visibility needed to improve it.
+            signal of local demand to the visibility needed to improve it.
           </p>
         </div>
 
-          <div
-            className="growth-system-map"
-            role="img"
-            aria-label="Growth system map showing Google Ads, Meta Ads, and Local Services Ads feeding websites and landing pages, then CRM, automation, and booked opportunities."
-          >
-            <div className="growth-system-map__header" aria-hidden="true">
-              <span>System map / Demand to opportunity</span>
-              <span>Florida + Nationwide</span>
-            </div>
+        <div
+          className="growth-system-map"
+          role="img"
+          aria-label="Growth system map showing Google Ads, Google Business Profile, and Local Services Ads feeding websites and landing pages, then CRM, automation, and booked opportunities."
+        >
+          <div className="growth-system-map__header" aria-hidden="true">
+            <span>System map / Demand to opportunity</span>
+            <span>Wisconsin + Nationwide</span>
+          </div>
 
-            <div className="growth-system-map__canvas">
-              <div className="growth-system-map__sources">
-                <div className="growth-system-map__source">
-                  <span className="growth-system-map__source-id">01</span>
-                  <div>
-                    <strong>Google Ads</strong>
-                    <small>High-intent search</small>
-                  </div>
-                </div>
-
-                <div className="growth-system-map__source">
-                  <span className="growth-system-map__source-id">02</span>
-                  <div>
-                    <strong>Meta Ads</strong>
-                    <small>Demand generation</small>
-                  </div>
-                </div>
-
-                <div className="growth-system-map__source">
-                  <span className="growth-system-map__source-id">03</span>
-                  <div>
-                    <strong>Local Services Ads</strong>
-                    <small>Local lead flow</small>
-                  </div>
+          <div className="growth-system-map__canvas">
+            <div className="growth-system-map__sources">
+              <div className="growth-system-map__source">
+                <span className="growth-system-map__source-id">01</span>
+                <div>
+                  <strong>Google Ads</strong>
+                  <small>High-intent search</small>
                 </div>
               </div>
 
-              <div className="growth-system-map__merge" aria-hidden="true">
-                <span />
-                <span />
-                <span />
+              <div className="growth-system-map__source">
+                <span className="growth-system-map__source-id">02</span>
+                <div>
+                  <strong>Google Business Profile</strong>
+                  <small>Local discovery</small>
+                </div>
               </div>
 
-              <div className="growth-system-map__main-flow">
-                <article className="growth-system-map__module growth-system-map__module--page">
-                  <span>04</span>
-                  <div className="growth-system-map__module-icon growth-system-map__module-icon--page">
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                  <strong>Website / Landing Page</strong>
-                  <small>Clarify the offer and capture intent</small>
-                </article>
-
-                <div className="growth-system-map__arrow" aria-hidden="true">
-                  <span />
+              <div className="growth-system-map__source">
+                <span className="growth-system-map__source-id">03</span>
+                <div>
+                  <strong>Local Services Ads</strong>
+                  <small>Local lead flow</small>
                 </div>
-
-                <article className="growth-system-map__module growth-system-map__module--crm">
-                  <span>05</span>
-                  <div className="growth-system-map__module-icon growth-system-map__module-icon--crm">
-                    <i />
-                    <i />
-                  </div>
-                  <strong>CRM Intelligence</strong>
-                  <small>Route, qualify, and assign the lead</small>
-                </article>
-
-                <div className="growth-system-map__arrow" aria-hidden="true">
-                  <span />
-                </div>
-
-                <article className="growth-system-map__module growth-system-map__module--automation">
-                  <span>06</span>
-                  <div className="growth-system-map__module-icon growth-system-map__module-icon--automation">
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                  <strong>Automation</strong>
-                  <small>Follow up while context stays intact</small>
-                </article>
-
-                <div className="growth-system-map__arrow" aria-hidden="true">
-                  <span />
-                </div>
-
-                <article className="growth-system-map__outcome">
-                  <span>07</span>
-                  <div className="growth-system-map__outcome-mark">
-                    <svg viewBox="0 0 48 48" aria-hidden="true">
-                      <rect x="8" y="10" width="32" height="29" rx="2" />
-                      <path d="M8 18h32M16 7v7M32 7v7M17 28l4 4 10-10" />
-                    </svg>
-                  </div>
-                  <strong>Booked Opportunity</strong>
-                  <small>Sales team receives a visible next step</small>
-                </article>
               </div>
             </div>
 
-            <div className="growth-system-map__footer" aria-hidden="true">
-              <span>Input / Qualified attention</span>
-              <span>Output / Revenue-ready opportunity</span>
+            <div className="growth-system-map__merge" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+
+            <div className="growth-system-map__main-flow">
+              <article className="growth-system-map__module growth-system-map__module--page">
+                <span>04</span>
+                <div className="growth-system-map__module-icon growth-system-map__module-icon--page">
+                  <i />
+                  <i />
+                  <i />
+                </div>
+                <strong>Website / Landing Page</strong>
+                <small>Clarify the offer and capture intent</small>
+              </article>
+
+              <div className="growth-system-map__arrow" aria-hidden="true">
+                <span />
+              </div>
+
+              <article className="growth-system-map__module growth-system-map__module--crm">
+                <span>05</span>
+                <div className="growth-system-map__module-icon growth-system-map__module-icon--crm">
+                  <i />
+                  <i />
+                </div>
+                <strong>CRM Intelligence</strong>
+                <small>Route, qualify, and assign the lead</small>
+              </article>
+
+              <div className="growth-system-map__arrow" aria-hidden="true">
+                <span />
+              </div>
+
+              <article className="growth-system-map__module growth-system-map__module--automation">
+                <span>06</span>
+                <div className="growth-system-map__module-icon growth-system-map__module-icon--automation">
+                  <i />
+                  <i />
+                  <i />
+                </div>
+                <strong>Automation</strong>
+                <small>Follow up while context stays intact</small>
+              </article>
+
+              <div className="growth-system-map__arrow" aria-hidden="true">
+                <span />
+              </div>
+
+              <article className="growth-system-map__outcome">
+                <span>07</span>
+                <div className="growth-system-map__outcome-mark">
+                  <svg viewBox="0 0 48 48" aria-hidden="true">
+                    <rect x="8" y="10" width="32" height="29" rx="2" />
+                    <path d="M8 18h32M16 7v7M32 7v7M17 28l4 4 10-10" />
+                  </svg>
+                </div>
+                <strong>Booked Opportunity</strong>
+                <small>Sales team receives a visible next step</small>
+              </article>
             </div>
           </div>
+
+          <div className="growth-system-map__footer" aria-hidden="true">
+            <span>Input / Qualified attention</span>
+            <span>Output / Revenue-ready opportunity</span>
+          </div>
+        </div>
       </section>
 
       <section className="ecosystem-map-section">
@@ -169,11 +169,21 @@ export default function EcosystemPage() {
                   <p>{stage.detail}</p>
 
                   <div className="ecosystem-stage__detail">
-                    <span>{index === 0 && 'Google Ads / Meta Ads / LSAs'}</span>
-                    <span>{index === 1 && 'Websites / Landing Pages / Offers'}</span>
+                    <span>
+                      {index === 0 &&
+                        'Google Ads / Google Business Profile / LSAs'}
+                    </span>
+                    <span>
+                      {index === 1 && 'Websites / Landing Pages / Offers'}
+                    </span>
                     <span>{index === 2 && 'CRM / Routing / Booking'}</span>
-                    <span>{index === 3 && 'Nurture / Automation / Reactivation'}</span>
-                    <span>{index === 4 && 'Attribution / Reporting / Iteration'}</span>
+                    <span>
+                      {index === 3 &&
+                        'Nurture / Automation / Reactivation'}
+                    </span>
+                    <span>
+                      {index === 4 && 'Attribution / Reporting / Iteration'}
+                    </span>
                   </div>
                 </div>
 

@@ -63,7 +63,7 @@ export default function GrowthFlow() {
     <div
       className="opportunity-relay"
       role="img"
-      aria-label="Todd Marketing turns qualified demand from Google, Meta, and Local Services into a sales-ready opportunity through a connected growth system."
+      aria-label="Todd Marketing turns qualified demand from Google Search, Google Business Profile, and Local Services Ads into a sales-ready opportunity through a connected growth system."
     >
       <div className="opportunity-relay__grid" aria-hidden="true" />
       <div className="opportunity-relay__vignette" aria-hidden="true" />
@@ -92,12 +92,13 @@ export default function GrowthFlow() {
           </h2>
 
           <p className="opportunity-relay__copy">
-            Google Search, Meta, and Local Services generate the initial signal.
+            Google Search, Google Business Profile, and Local Services create
+            the initial local signal.
           </p>
 
           <div className="opportunity-relay__tags">
-            <span>Google</span>
-            <span>Meta</span>
+            <span>Google Search</span>
+            <span>Google Business Profile</span>
             <span>Local Services</span>
           </div>
         </section>
@@ -117,7 +118,8 @@ export default function GrowthFlow() {
           </h2>
 
           <p className="opportunity-relay__copy">
-            Conversion architecture, CRM intelligence, and automation work as one connected operating layer.
+            Conversion architecture, CRM intelligence, and automation work as
+            one connected operating layer.
           </p>
 
           <div className="opportunity-relay__tags">

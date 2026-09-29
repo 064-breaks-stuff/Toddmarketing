@@ -7,10 +7,10 @@ const stages = [
     title: 'Demand',
     label: 'Demand in',
     description:
-      'Create qualified attention through search, paid social, and local-service channels aligned to real buying intent.',
+      'Create qualified attention through Google Search, Google Business Profile, and local-service channels aligned to real buying intent.',
     detail:
       'Demand generation begins by aligning the offer, market, service area, and channel with the moment a buyer is actively looking for help.',
-    signals: ['Google Ads', 'Meta Ads', 'Local Services Ads'],
+    signals: ['Google Ads', 'Google Business Profile', 'Local Services Ads'],
     visual: 'demand'
   },
   {

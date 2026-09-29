@@ -43,7 +43,7 @@ export default function WebsitesFunnelsPage() {
         'Your existing website looks acceptable but does not create enough qualified actions.',
         'Paid traffic is being sent to pages that were not built for the campaign or offer.',
         'Your team cannot reliably connect a website action to the CRM, booking flow, or next owner.',
-        'You need a stronger site before investing more aggressively in Google Ads, Meta, or Local Services Ads.'
+        'You need a stronger site before investing more aggressively in Google Ads, Google Business Profile visibility, or Local Services Ads.'
       ]}
       mechanismTitle="From first click to an informed next step."
       mechanismCopy="Conversion architecture is not simply visual design. It connects a buyer’s reason for arriving, the clarity of the offer, the action they take, and the information your team receives afterward."

@@ -19,10 +19,10 @@ const services = [
     number: '02',
     title: 'Demand Generation.',
     description:
-      'Paid demand built around intent—not activity for activity’s sake.',
+      'Local demand built around intent—not activity for activity’s sake.',
     items: [
       'Google Ads and search-intent capture',
-      'Meta acquisition and remarketing',
+      'Google Business Profile visibility support',
       'Local Services Ads and local lead flow'
     ],
     href: '/services/advertising',
@@ -71,7 +71,7 @@ function DemandVisual() {
         </div>
 
         <div className="service-showcase__source-node service-showcase__source-node--two">
-          Meta
+          GBP
         </div>
 
         <div className="service-showcase__source-node service-showcase__source-node--three">

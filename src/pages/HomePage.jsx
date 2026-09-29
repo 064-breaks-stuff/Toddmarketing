@@ -26,7 +26,7 @@ export default function HomePage() {
             </h1>
 
             <p className="hero__lead">
-              Todd Marketing connects demand generation, conversion
+              Todd Marketing connects local demand generation, conversion
               architecture, CRM intelligence, and automation—so opportunity
               keeps moving after the click.
             </p>
@@ -160,11 +160,11 @@ export default function HomePage() {
       <ServiceShowcase
         index="02"
         eyebrow="Demand generation"
-        title="Create demand around intent—not noise."
-        copy="Paid acquisition works best when channel strategy, offer clarity, landing experiences, and sales feedback are designed as one connected system."
+        title="Create local demand around intent—not noise."
+        copy="Google Ads, Local Services Ads, Google Business Profile visibility, landing experiences, and sales feedback work best when they are designed as one connected system."
         capabilities={[
           'Google Ads and high-intent search capture',
-          'Meta acquisition and remarketing systems',
+          'Google Business Profile visibility support',
           'Local Services Ads and local lead flow'
         ]}
         visual="demand"
