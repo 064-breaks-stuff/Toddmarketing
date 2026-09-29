@@ -1,0 +1,342 @@
+.about-hero {
+  background:
+    radial-gradient(circle at 75% 38%, rgb(0 58 249 / 15%), transparent 25rem),
+    #101116;
+}
+
+.about-founder {
+  padding: var(--space-7) 0;
+  background: var(--tm-paper);
+}
+
+.about-founder__grid {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 9vw, 10rem);
+  align-items: start;
+}
+
+.about-founder__portrait-wrap {
+  position: relative;
+  overflow: hidden;
+  background: #14161d;
+}
+
+.about-founder__portrait-wrap::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 58%, rgb(8 9 12 / 76%)),
+    linear-gradient(90deg, rgb(0 58 249 / 12%), transparent 45%);
+}
+
+.about-founder__portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.84;
+  object-fit: cover;
+  object-position: center center;
+  filter: saturate(0.82) contrast(1.03);
+}
+
+.about-founder__portrait-label {
+  position: absolute;
+  right: 1.15rem;
+  bottom: 1.15rem;
+  left: 1.15rem;
+  z-index: 2;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--tm-paper);
+  font-family: var(--font-display);
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.about-founder__portrait-label span:last-child {
+  max-width: 13ch;
+  color: rgb(253 253 255 / 67%);
+  font-size: 0.48rem;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.about-founder__content {
+  max-width: 42rem;
+  padding-top: 0.5rem;
+}
+
+.about-founder__content h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--tm-ink);
+  font-size: clamp(2.8rem, 5vw, 5.9rem);
+  font-weight: 500;
+  letter-spacing: -0.085em;
+  line-height: 0.88;
+}
+
+.about-founder__role {
+  margin: 2rem 0 0;
+  color: var(--tm-ink);
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-founder__role span {
+  display: block;
+  margin-top: 0.45rem;
+  color: var(--tm-blue);
+  font-size: 0.55rem;
+}
+
+.about-founder blockquote {
+  position: relative;
+  max-width: 35rem;
+  margin: 2.5rem 0 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 2px solid var(--tm-blue);
+}
+
+.about-founder blockquote p {
+  margin: 0;
+  color: var(--tm-ink);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.18;
+}
+
+.about-founder__body-copy {
+  max-width: 55ch;
+  margin: 2rem 0 0;
+  color: var(--tm-slate);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.about-founder__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 2.25rem;
+}
+
+.about-founder__video-link,
+.about-direct-contact__external {
+  display: inline-flex;
+  gap: 0.65rem;
+  align-items: center;
+  color: var(--tm-ink);
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  transition: color 180ms var(--ease-out);
+}
+
+.about-founder__video-link:hover,
+.about-founder__video-link:focus-visible,
+.about-direct-contact__external:hover,
+.about-direct-contact__external:focus-visible {
+  color: var(--tm-blue);
+}
+
+.about-founder__video-icon {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  color: var(--tm-paper);
+  background: var(--tm-blue);
+}
+
+.about-principles {
+  padding: var(--space-7) 0;
+  color: var(--tm-paper);
+  background:
+    radial-gradient(circle at 72% 46%, rgb(0 58 249 / 14%), transparent 26rem),
+    #111217;
+}
+
+.about-principles .section-label {
+  color: #9bb4ff;
+}
+
+.about-principles__intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-principles__intro .section-label {
+  grid-column: 1 / -1;
+}
+
+.about-principles__intro h2 {
+  max-width: 10ch;
+  margin: 0;
+  color: var(--tm-paper);
+  font-size: clamp(2.7rem, 5vw, 5.8rem);
+  font-weight: 500;
+  letter-spacing: -0.085em;
+  line-height: 0.88;
+}
+
+.about-principles__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: var(--space-6);
+  border-top: 1px solid var(--tm-line-dark);
+}
+
+.about-principles__grid article {
+  min-height: 18rem;
+  padding: 1.5rem 1.5rem 1.5rem 0;
+  border-right: 1px solid var(--tm-line-dark);
+}
+
+.about-principles__grid article:not(:first-child) {
+  padding-left: 1.5rem;
+}
+
+.about-principles__grid article:last-child {
+  border-right: 0;
+}
+
+.about-principles__grid span {
+  color: #9db8ff;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.about-principles__grid h3 {
+  max-width: 12ch;
+  margin: 3.3rem 0 1rem;
+  color: var(--tm-paper);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.about-principles__grid p {
+  max-width: 31ch;
+  margin: 0;
+  color: rgb(253 253 255 / 59%);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.about-direct-contact {
+  padding: var(--space-7) 0;
+  background: #f5f7ff;
+}
+
+.about-direct-contact .container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: end;
+}
+
+.about-direct-contact h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--tm-ink);
+  font-size: clamp(2.7rem, 4.8vw, 5.6rem);
+  font-weight: 500;
+  letter-spacing: -0.085em;
+  line-height: 0.88;
+}
+
+.about-direct-contact p:not(.section-label) {
+  max-width: 46ch;
+  margin: 1.5rem 0 0;
+  color: var(--tm-slate);
+  line-height: 1.65;
+}
+
+.about-direct-contact__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 960px) {
+  .about-founder__grid,
+  .about-principles__intro,
+  .about-direct-contact .container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-founder__portrait-wrap {
+    max-width: 38rem;
+  }
+
+  .about-principles__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-principles__grid article,
+  .about-principles__grid article:not(:first-child) {
+    min-height: auto;
+    padding: 1.5rem 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--tm-line-dark);
+  }
+
+  .about-principles__grid h3 {
+    margin-top: 2rem;
+  }
+
+  .about-direct-contact__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-founder__portrait {
+    aspect-ratio: 0.95;
+  }
+
+  .about-founder__portrait-label {
+    font-size: 0.46rem;
+  }
+
+  .about-founder__portrait-label span:last-child {
+    font-size: 0.4rem;
+  }
+
+  .about-founder__content h2,
+  .about-principles__intro h2,
+  .about-direct-contact h2 {
+    font-size: clamp(2.55rem, 12vw, 4rem);
+  }
+
+  .about-founder__actions,
+  .about-direct-contact__actions {
+    align-items: stretch;
+  }
+
+  .about-founder__video-link {
+    padding: 0.45rem 0;
+  }
+}
