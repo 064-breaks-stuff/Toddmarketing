@@ -1,42 +1,44 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import BrandLogo from '../brand/BrandLogo';
 import { CONTACT_PATH } from '../../app/siteConfig';
 
 export default function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="container">
-        <div className="site-footer__top">
+    <footer className="footer">
+      <div className="container footer__inner">
+        <Link className="footer__brand" to="/" aria-label="Todd Marketing home">
+          <BrandLogo />
+        </Link>
+
+        <div className="footer__content">
           <div>
-            <p className="site-footer__label">Todd Marketing</p>
-            <h2>
-              Growth infrastructure,
-              <br />
-              built to hold.
-            </h2>
+            <p className="footer__eyebrow">Growth infrastructure for service businesses</p>
+
+            <p className="footer__location">
+              Wisconsin-originated. Serving clients across the United States.
+            </p>
           </div>
 
-          <Link className="site-footer__cta" to={CONTACT_PATH}>
-            <span>Book a Growth Systems Audit</span>
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </Link>
+          <nav className="footer__nav" aria-label="Footer">
+            <Link to="/ecosystem">Ecosystem</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/process">Process</Link>
+            <Link to="/results">Results</Link>
+            <Link to="/about">About</Link>
+            <Link to={CONTACT_PATH}>Contact</Link>
+          </nav>
         </div>
 
-        <div className="site-footer__bottom">
+        <div className="footer__bottom">
           <p>
-            Florida-based growth infrastructure for businesses that need demand,
-            conversion, CRM intelligence, and automation to work as one system.
+            © {new Date().getFullYear()} Social 1st Marketing DBA Todd Marketing.
+            All rights reserved.
           </p>
 
-          <div className="site-footer__links">
-            <Link to="/">Home</Link>
-            <Link to="/ecosystem">Ecosystem</Link>
-            <Link to={CONTACT_PATH}>Contact</Link>
+          <div className="footer__legal">
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Use</Link>
           </div>
-
-          <p className="site-footer__meta">
-            © {new Date().getFullYear()} Todd Marketing
-          </p>
         </div>
       </div>
     </footer>
