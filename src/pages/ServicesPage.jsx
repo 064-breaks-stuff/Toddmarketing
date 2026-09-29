@@ -1,92 +1,591 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Check, ChevronRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import PageRail from '../components/ui/PageRail';
 import { CONTACT_PATH } from '../app/siteConfig';
 
 const services = [
   {
+    id: 'demand-generation',
     number: '01',
-    title: 'Conversion Architecture',
-    description:
-      'Websites, landing pages, offers, and conversion paths that give serious buyers a clear next step.',
-    to: '/services/websites-funnels'
+    eyebrow: 'Demand generation',
+    title: 'Generate high-intent local demand.',
+    summary:
+      'Bring the right people into the system through Google Search, Local Services Ads, local visibility, and campaign pages built to turn intent into a usable inquiry.',
+    problem:
+      'You need more qualified demand, but you do not want activity that creates clicks without creating useful opportunities.',
+    includes: [
+      'Google Ads and search-intent campaign management',
+      'Local Services Ads strategy and operational support',
+      'Google Business Profile visibility support',
+      'Service and location-specific landing pages',
+      'Call, form, and source-tracking foundations'
+    ],
+    clientReceives: [
+      'A channel plan built around where high-intent customers search',
+      'Campaign and landing-page alignment around a specific conversion goal',
+      'A clearer view of which acquisition signals are producing usable leads'
+    ],
+    systems: ['Google Ads', 'Local Services Ads', 'Google Business Profile', 'Landing pages', 'Tracking'],
+    bestFor:
+      'Businesses that need more qualified local demand and want acquisition connected to the conversion path and lead follow-up.',
+    cta: 'Build My Demand System',
+    diagram: 'demand'
   },
   {
+    id: 'demand-capture',
     number: '02',
-    title: 'Demand Generation',
-    description:
-      'Google Ads, Meta Ads, and Local Services Ads aligned to intent, offer clarity, and downstream lead quality.',
-    to: '/services/advertising'
+    eyebrow: 'Demand capture',
+    title: 'Turn local search intent into a clear next step.',
+    summary:
+      'Make it easier for high-intent prospects to find the business, understand the offer, call, submit, book, or start a conversation without unnecessary friction.',
+    problem:
+      'You are already getting attention, but too much demand leaks because the profile, website, landing page, calls, forms, and response path are disconnected.',
+    includes: [
+      'Google Business Profile optimization and conversion readiness',
+      'Website and landing-page conversion paths',
+      'Offer, proof, CTA, call, and form structure',
+      'Service-specific lead-capture experiences',
+      'Lead-response workflow planning'
+    ],
+    clientReceives: [
+      'A more direct path from local search to action',
+      'Focused conversion experiences for services, locations, and campaigns',
+      'Lead details structured for a useful CRM handoff'
+    ],
+    systems: ['Google Business Profile', 'Website', 'Landing pages', 'Calls and forms', 'Lead capture'],
+    bestFor:
+      'Businesses with existing traffic or local visibility that are not converting enough of that attention into conversations, calls, or booked opportunities.',
+    cta: 'See What’s Missing in My Lead Flow',
+    diagram: 'capture'
   },
   {
+    id: 'crm-automation',
     number: '03',
-    title: 'Revenue Operations',
-    description:
-      'CRM intelligence, GoHighLevel, n8n workflows, routing, follow-up, booking, and visibility systems.',
-    to: '/services/crm-automation'
+    eyebrow: 'CRM & automation',
+    title: 'Connect marketing, follow-up, and reporting.',
+    summary:
+      'Use GoHighLevel and connected workflows to make every lead easier to route, respond to, nurture, book, review, reactivate, and understand.',
+    problem:
+      'Leads arrive, but ownership, response speed, booking, follow-up, reputation, and reporting depend too heavily on manual effort or disconnected tools.',
+    includes: [
+      'GoHighLevel CRM and pipeline architecture',
+      'Lead routing and speed-to-lead workflows',
+      'Appointment, nurture, and reactivation automation',
+      'Review-request and reputation workflows',
+      'Visibility into lead source, status, and next action'
+    ],
+    clientReceives: [
+      'A lead process with clearer ownership and fewer missed handoffs',
+      'Automated follow-up that supports the team rather than replacing it',
+      'Pipeline and reporting context that connects marketing activity to outcomes'
+    ],
+    systems: ['GoHighLevel', 'Pipelines', 'Automation', 'Review requests', 'Reporting'],
+    bestFor:
+      'Businesses that need their marketing, lead response, sales follow-up, and customer lifecycle activity to operate as one connected system.',
+    cta: 'Connect My Marketing and Follow-Up',
+    diagram: 'automation'
   }
 ];
 
+function DemandGenerationDiagram() {
+  return (
+    <div className="services-diagram services-diagram--demand" aria-hidden="true">
+      <div className="services-diagram__grid" />
+
+      <div className="services-diagram__label">
+        Local visibility and demand flow
+      </div>
+
+      <div className="demand-diagram__source demand-diagram__source--search">
+        <span>01</span>
+        <strong>Google Search</strong>
+        <small>High-intent demand</small>
+      </div>
+
+      <div className="demand-diagram__source demand-diagram__source--lsa">
+        <span>02</span>
+        <strong>Local Services Ads</strong>
+        <small>Local lead flow</small>
+      </div>
+
+      <div className="demand-diagram__source demand-diagram__source--gbp">
+        <span>03</span>
+        <strong>Google Business Profile</strong>
+        <small>Local discovery</small>
+      </div>
+
+      <span className="demand-diagram__line demand-diagram__line--one" />
+      <span className="demand-diagram__line demand-diagram__line--two" />
+      <span className="demand-diagram__line demand-diagram__line--three" />
+
+      <div className="demand-diagram__core">
+        <span>Qualified</span>
+        <strong>Demand</strong>
+        <small>Right service · right location · right intent</small>
+      </div>
+
+      <div className="demand-diagram__outcome">
+        <span>Conversion signals</span>
+
+        <div>
+          <i />
+          Calls
+        </div>
+
+        <div>
+          <i />
+          Forms
+        </div>
+
+        <div>
+          <i />
+          Bookings
+        </div>
+      </div>
+
+      <div className="services-diagram__footer">
+        <span>Channel fit</span>
+        <span>Message match</span>
+        <span>Useful lead signal</span>
+      </div>
+    </div>
+  );
+}
+
+function DemandCaptureDiagram() {
+  return (
+    <div className="services-diagram services-diagram--capture" aria-hidden="true">
+      <div className="services-diagram__grid" />
+
+      <div className="services-diagram__label">
+        Search-to-conversion path
+      </div>
+
+      <div className="capture-diagram__entry capture-diagram__entry--gbp">
+        <span>01</span>
+        <strong>GBP</strong>
+        <small>Local search</small>
+      </div>
+
+      <div className="capture-diagram__entry capture-diagram__entry--website">
+        <span>02</span>
+        <strong>Website</strong>
+        <small>Offer clarity</small>
+      </div>
+
+      <div className="capture-diagram__entry capture-diagram__entry--landing">
+        <span>03</span>
+        <strong>Landing Page</strong>
+        <small>Focused action</small>
+      </div>
+
+      <span className="capture-diagram__line capture-diagram__line--one" />
+      <span className="capture-diagram__line capture-diagram__line--two" />
+      <span className="capture-diagram__line capture-diagram__line--three" />
+
+      <div className="capture-diagram__action">
+        <span>Next step</span>
+        <strong>Call · Form · Booking · Chat</strong>
+        <small>Clear action, usable context, less friction</small>
+      </div>
+
+      <div className="capture-diagram__handoff">
+        <span>Lead capture</span>
+        <strong>Source + service interest + contact detail</strong>
+      </div>
+
+      <div className="services-diagram__footer">
+        <span>Local discovery</span>
+        <span>Conversion clarity</span>
+        <span>Capture ready</span>
+      </div>
+    </div>
+  );
+}
+
+function AutomationDiagram() {
+  return (
+    <div className="services-diagram services-diagram--automation" aria-hidden="true">
+      <div className="services-diagram__grid" />
+
+      <div className="services-diagram__label">
+        Lead lifecycle automation
+      </div>
+
+      <div className="automation-diagram__track">
+        <div className="automation-diagram__step automation-diagram__step--lead">
+          <span>01</span>
+          <strong>New lead</strong>
+          <small>Source captured</small>
+        </div>
+
+        <div className="automation-diagram__connector" />
+
+        <div className="automation-diagram__step automation-diagram__step--response">
+          <span>02</span>
+          <strong>Respond</strong>
+          <small>Fast first touch</small>
+        </div>
+
+        <div className="automation-diagram__connector" />
+
+        <div className="automation-diagram__step automation-diagram__step--nurture">
+          <span>03</span>
+          <strong>Nurture</strong>
+          <small>Relevant follow-up</small>
+        </div>
+
+        <div className="automation-diagram__connector" />
+
+        <div className="automation-diagram__step automation-diagram__step--booked">
+          <span>04</span>
+          <strong>Booked job</strong>
+          <small>Pipeline visible</small>
+        </div>
+      </div>
+
+      <div className="automation-diagram__loop">
+        <span>After the job</span>
+        <div>
+          <strong>Review request</strong>
+          <i />
+          <strong>Reactivation</strong>
+          <i />
+          <strong>Reporting</strong>
+        </div>
+      </div>
+
+      <div className="services-diagram__footer services-diagram__footer--ink">
+        <span>Ownership assigned</span>
+        <span>Follow-up active</span>
+        <span>Outcome visible</span>
+      </div>
+    </div>
+  );
+}
+
+function ServiceDiagram({ type }) {
+  if (type === 'demand') {
+    return <DemandGenerationDiagram />;
+  }
+
+  if (type === 'capture') {
+    return <DemandCaptureDiagram />;
+  }
+
+  return <AutomationDiagram />;
+}
+
 export default function ServicesPage() {
+  const [activeService, setActiveService] = useState(services[0]);
+  const activeIndex = services.findIndex(
+    (service) => service.id === activeService.id
+  );
+
+  const selectService = (service) => {
+    setActiveService(service);
+
+    window.requestAnimationFrame(() => {
+      document
+        .getElementById('service-detail')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
   return (
     <>
-      <section className="interior-hero">
+      <section className="services-hero">
         <div className="container">
           <Link className="back-link back-link--light" to="/">
             <span aria-hidden="true">←</span>
             Return to Todd Marketing
           </Link>
 
-          <p className="hero__eyebrow">Todd Marketing / Services</p>
+          <div className="services-hero__layout">
+            <div>
+              <p className="hero__eyebrow">Todd Marketing / Services</p>
 
-          <h1>
-            Three practices.
-            <span> One connected growth system.</span>
-          </h1>
+              <h1>
+                Build the connected system behind your local growth.
+              </h1>
 
-          <p>
-            Each service can solve an immediate business problem. Together, they
-            create the infrastructure that keeps opportunity moving.
-          </p>
+              <p>
+                Todd Marketing helps quality service businesses get found,
+                convert demand, and follow through—without treating every
+                channel, page, lead, and customer interaction as a separate
+                problem.
+              </p>
+            </div>
+
+            <div className="services-hero__system-note">
+              <span>Preferred engagement</span>
+
+              <strong>
+                Visibility → Demand → Conversion → Follow-Up → Reputation →
+                Reporting
+              </strong>
+
+              <p>
+                We can repair a missing piece. The strongest results come from
+                owning the connected system.
+              </p>
+            </div>
+          </div>
+
+          <Button to={CONTACT_PATH}>Build My Growth System</Button>
         </div>
       </section>
 
-      <section className="services-index">
+      <section className="services-starting-point">
         <div className="container">
-          <p className="section-label">Choose your starting point</p>
+          <div className="services-starting-point__intro">
+            <p className="section-label">Start with the real constraint</p>
 
-          <div className="services-index__list">
-            {services.map((service) => (
-              <Link className="services-index__item" key={service.to} to={service.to}>
-                <span className="services-index__number">{service.number}</span>
+            <h2>
+              You do not need to choose a disconnected deliverable before you
+              understand what is limiting the system.
+            </h2>
+          </div>
 
-                <div>
-                  <h2>{service.title}</h2>
-                  <p>{service.description}</p>
-                </div>
+          <div className="services-starting-point__grid">
+            <button
+              className={
+                activeService.id === 'demand-generation'
+                  ? 'services-starting-point__card is-active'
+                  : 'services-starting-point__card'
+              }
+              type="button"
+              onClick={() => selectService(services[0])}
+            >
+              <span>01</span>
+              <strong>You need more qualified demand.</strong>
+              <small>
+                Build the local visibility and acquisition path that creates
+                useful opportunities.
+              </small>
+              <ChevronRight size={19} aria-hidden="true" />
+            </button>
 
-                <ArrowUpRight size={22} aria-hidden="true" />
-              </Link>
-            ))}
+            <button
+              className={
+                activeService.id === 'demand-capture'
+                  ? 'services-starting-point__card is-active'
+                  : 'services-starting-point__card'
+              }
+              type="button"
+              onClick={() => selectService(services[1])}
+            >
+              <span>02</span>
+              <strong>You have leads, but demand is leaking.</strong>
+              <small>
+                Make it easier for searchers and visitors to take the next
+                step.
+              </small>
+              <ChevronRight size={19} aria-hidden="true" />
+            </button>
+
+            <button
+              className={
+                activeService.id === 'crm-automation'
+                  ? 'services-starting-point__card is-active'
+                  : 'services-starting-point__card'
+              }
+              type="button"
+              onClick={() => selectService(services[2])}
+            >
+              <span>03</span>
+              <strong>You need marketing and follow-up connected.</strong>
+              <small>
+                Give every lead a clear owner, next step, and visible outcome.
+              </small>
+              <ChevronRight size={19} aria-hidden="true" />
+            </button>
           </div>
         </div>
       </section>
 
-      <section className="interior-cta-section">
+      <section className="services-switcher" aria-label="Todd Marketing services">
         <div className="container">
-          <h2>Start with the layer that matters most right now.</h2>
+          <div
+            className="services-switcher__tabs"
+            role="tablist"
+            aria-label="Service categories"
+          >
+            {services.map((service) => (
+              <button
+                aria-controls="service-detail"
+                aria-selected={activeService.id === service.id}
+                className={
+                  activeService.id === service.id
+                    ? 'services-switcher__tab is-active'
+                    : 'services-switcher__tab'
+                }
+                id={`${service.id}-tab`}
+                key={service.id}
+                onClick={() => selectService(service)}
+                role="tab"
+                tabIndex={activeService.id === service.id ? 0 : -1}
+                type="button"
+              >
+                <span>{service.number}</span>
+                {service.eyebrow}
+              </button>
+            ))}
+          </div>
 
-          <Button to={CONTACT_PATH}>
-            Book a Growth Systems Audit
-          </Button>
+          <article
+            aria-labelledby={`${activeService.id}-tab`}
+            className="services-detail"
+            id="service-detail"
+            role="tabpanel"
+            tabIndex="-1"
+          >
+            <div className="services-detail__head">
+              <div>
+                <p className="section-label">
+                  {activeService.number} / {activeService.eyebrow}
+                </p>
+
+                <h2>{activeService.title}</h2>
+
+                <p>{activeService.summary}</p>
+              </div>
+
+              <span className="services-detail__counter">
+                {String(activeIndex + 1).padStart(2, '0')} /{' '}
+                {String(services.length).padStart(2, '0')}
+              </span>
+            </div>
+
+            <div className="services-detail__diagram-wrap">
+              <ServiceDiagram type={activeService.diagram} />
+            </div>
+
+            <div className="services-detail__context">
+              <p className="section-label">The business problem</p>
+              <p>{activeService.problem}</p>
+            </div>
+
+            <div className="services-detail__grid">
+              <div>
+                <p className="services-detail__label">What is included</p>
+
+                <ul className="services-detail__list">
+                  {activeService.includes.map((item) => (
+                    <li key={item}>
+                      <Check size={15} aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <p className="services-detail__label">What you receive</p>
+
+                <ul className="services-detail__list">
+                  {activeService.clientReceives.map((item) => (
+                    <li key={item}>
+                      <Check size={15} aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="services-detail__fit">
+                <p className="services-detail__label">Best fit when</p>
+                <p>{activeService.bestFor}</p>
+
+                <div className="services-detail__systems">
+                  {activeService.systems.map((system) => (
+                    <span key={system}>{system}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="services-detail__action">
+              <div>
+                <p className="section-label">Choose the right starting point</p>
+                <p>
+                  The goal is not a collection of isolated tactics. It is a
+                  connected growth system that makes the next best action clear.
+                </p>
+              </div>
+
+              <Button to={CONTACT_PATH}>{activeService.cta}</Button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="services-integrated-system">
+        <div className="container">
+          <div className="services-integrated-system__intro">
+            <p className="section-label">Why connected systems win</p>
+
+            <h2>
+              A stronger result is rarely created by one channel operating
+              alone.
+            </h2>
+
+            <p>
+              Google Business Profile, Google Ads, Local Services Ads, campaign
+              pages, website conversion paths, GoHighLevel follow-up, reviews,
+              and reporting become more useful when the handoff between each
+              stage is designed on purpose.
+            </p>
+          </div>
+
+          <div className="services-integrated-system__map">
+            <div>
+              <span>01</span>
+              <strong>Get found</strong>
+              <small>GBP · Google Ads · LSAs · local search</small>
+            </div>
+
+            <i aria-hidden="true" />
+
+            <div>
+              <span>02</span>
+              <strong>Convert demand</strong>
+              <small>Website · landing pages · calls · forms</small>
+            </div>
+
+            <i aria-hidden="true" />
+
+            <div>
+              <span>03</span>
+              <strong>Follow up and grow</strong>
+              <small>GoHighLevel · automation · reviews · reporting</small>
+            </div>
+          </div>
+
+          <Link className="services-integrated-system__link" to="/ecosystem">
+            Explore the complete growth ecosystem
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      <section className="services-page-cta">
+        <div className="container">
+          <div>
+            <p className="section-label">Build from the constraint</p>
+            <h2>See what is missing in your lead flow.</h2>
+          </div>
+
+          <Button to={CONTACT_PATH}>Book a Growth Infrastructure Audit</Button>
         </div>
       </section>
 
       <div className="container">
         <PageRail
           previous={{ label: 'Explore the Growth System', to: '/ecosystem' }}
-          next={{ label: 'Review the Process', to: '/process' }}
+          next={{ label: 'How Todd Marketing Works', to: '/process' }}
         />
       </div>
     </>
