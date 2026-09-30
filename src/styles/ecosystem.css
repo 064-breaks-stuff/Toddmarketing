@@ -1987,13 +1987,13 @@
   }
 
   .growth-system-map__main-flow {
-  display: flex;
-  gap: 0.65rem;
-  overflow-x: auto;
-  padding: 1rem;
-  overscroll-behavior-inline: contain;
-  scrollbar-gutter: stable;
-}
+    display: flex;
+    gap: 0.65rem;
+    overflow-x: auto;
+    padding: 1rem;
+    overscroll-behavior-inline: contain;
+    scrollbar-gutter: stable;
+  }
 
   .growth-system-map__module,
   .growth-system-map__outcome {
