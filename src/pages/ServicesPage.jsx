@@ -481,6 +481,23 @@ export default function ServicesPage() {
         className="services-switcher"
         aria-label="Todd Marketing services"
       >
+
+        <div
+          className="services-switcher__anchor"
+          id="demand-generation"
+          aria-hidden="true"
+        />
+        <div
+          className="services-switcher__anchor"
+          id="demand-capture"
+          aria-hidden="true"
+        />
+        <div
+          className="services-switcher__anchor"
+          id="crm-automation"
+          aria-hidden="true"
+        />
+
         <div className="container">
           <div
             className="services-switcher__tabs"
@@ -516,11 +533,6 @@ export default function ServicesPage() {
             role="tabpanel"
             tabIndex="-1"
           >
-            <div
-              className="services-detail__anchor"
-              id={activeService.id}
-              aria-hidden="true"
-            />
 
             <div className="services-detail__head">
               <div>
