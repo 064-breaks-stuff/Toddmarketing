@@ -1,4 +1,4 @@
-function HeroFrame({ eyebrow, title, status, children, type }) {
+function DiagramFrame({ eyebrow, title, status, children, type }) {
   return (
     <div className={`service-visual service-visual--${type}`} aria-hidden="true">
       <div className="service-visual__grid" />
@@ -22,230 +22,231 @@ function HeroFrame({ eyebrow, title, status, children, type }) {
   );
 }
 
-function ConversionVisual() {
+function DemandGenerationVisual() {
   return (
-    <HeroFrame
-      type="conversion"
-      eyebrow="Conversion architecture"
-      title="Click → clarity → action"
-      status="Path mapped"
+    <DiagramFrame
+      type="advertising"
+      eyebrow="Local demand command flow"
+      title="Visibility → intent → opportunity"
+      status="Signal mapped"
     >
-      <div className="conversion-hero__browser">
-        <div className="conversion-hero__browser-bar">
-          <span className="conversion-hero__browser-brand">YOUR OFFER</span>
-
-          <span className="conversion-hero__browser-action">
-            Book an audit
-          </span>
-        </div>
-
-        <div className="conversion-hero__browser-content">
-          <div className="conversion-hero__offer">
-            <span className="conversion-hero__offer-kicker">
-              Clear value proposition
-            </span>
-
-            <strong>Make the next step obvious.</strong>
-
-            <span className="conversion-hero__offer-copy" />
-            <span className="conversion-hero__offer-copy conversion-hero__offer-copy--short" />
-
-            <span className="conversion-hero__offer-button">
-              Get started
-            </span>
-          </div>
-
-          <div className="conversion-hero__capture">
-            <span className="conversion-hero__capture-label">
-              Lead capture
-            </span>
-
-            <span className="conversion-hero__capture-field" />
-            <span className="conversion-hero__capture-field" />
-            <span className="conversion-hero__capture-button">
-              Continue
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div className="conversion-hero__handoff">
-        <div className="conversion-hero__handoff-step conversion-hero__handoff-step--visitor">
+      <div className="demand-flow">
+        <div className="demand-flow__input demand-flow__input--search">
           <span>01</span>
-          <strong>Visitor</strong>
+          <strong>Google Search</strong>
+          <small>Active demand</small>
         </div>
 
-        <span className="conversion-hero__handoff-line conversion-hero__handoff-line--one" />
-
-        <div className="conversion-hero__handoff-step conversion-hero__handoff-step--action">
+        <div className="demand-flow__input demand-flow__input--gbp">
           <span>02</span>
-          <strong>Action</strong>
+          <strong>Google Business Profile</strong>
+          <small>Local discovery</small>
         </div>
 
-        <span className="conversion-hero__handoff-line conversion-hero__handoff-line--two" />
-
-        <div className="conversion-hero__handoff-step conversion-hero__handoff-step--crm">
+        <div className="demand-flow__input demand-flow__input--lsa">
           <span>03</span>
-          <strong>CRM context</strong>
+          <strong>Local Services Ads</strong>
+          <small>Service-area intent</small>
+        </div>
+
+        <span className="demand-flow__connector demand-flow__connector--one" />
+        <span className="demand-flow__connector demand-flow__connector--two" />
+        <span className="demand-flow__connector demand-flow__connector--three" />
+
+        <div className="demand-flow__filter">
+          <span className="demand-flow__filter-label">Fit filter</span>
+          <strong>Offer + location + intent</strong>
+          <small>Channel role is matched to the buyer’s search moment.</small>
+        </div>
+
+        <span className="demand-flow__connector demand-flow__connector--four" />
+
+        <div className="demand-flow__output">
+          <span>Outcome signal</span>
+          <strong>Qualified local opportunity</strong>
+
+          <div>
+            <i />
+            Call
+          </div>
+
+          <div>
+            <i />
+            Form
+          </div>
+
+          <div>
+            <i />
+            Booking
+          </div>
         </div>
       </div>
 
       <div className="service-visual__footer">
-        <span>Message match</span>
-        <span>Focused action</span>
-        <span>Context preserved</span>
+        <span>Search visibility</span>
+        <span>Message alignment</span>
+        <span>Lead-quality context</span>
       </div>
-    </HeroFrame>
+    </DiagramFrame>
   );
 }
 
-function AdvertisingVisual() {
+function WebsitesFunnelsVisual() {
   return (
-    <HeroFrame
-      type="advertising"
-      eyebrow="Demand generation"
-      title="Channel → intent → opportunity"
-      status="Signals aligned"
+    <DiagramFrame
+      type="websites-funnels"
+      eyebrow="Page-to-conversion wireflow"
+      title="Traffic → proof → action → handoff"
+      status="Path designed"
     >
-      <div className="advertising-hero__channel advertising-hero__channel--google">
-        <span className="advertising-hero__channel-number">01</span>
-        <strong>Google Ads</strong>
-        <small>High-intent search</small>
-      </div>
+      <div className="wireflow">
+        <div className="wireflow__source">
+          <span>01</span>
+          <strong>Traffic source</strong>
+          <small>Search · GBP · LSA · referral</small>
+        </div>
 
-      <div className="advertising-hero__channel advertising-hero__channel--gbp">
-        <span className="advertising-hero__channel-number">02</span>
-        <strong>Google Business Profile</strong>
-        <small>Local discovery</small>
-      </div>
+        <span className="wireflow__arrow wireflow__arrow--one" />
 
-      <div className="advertising-hero__channel advertising-hero__channel--lsa">
-        <span className="advertising-hero__channel-number">03</span>
-        <strong>Local Services</strong>
-        <small>Local lead flow</small>
-      </div>
+        <div className="wireflow__page">
+          <div className="wireflow__page-bar">
+            <span />
+            <span />
+            <span />
+          </div>
 
-      <span className="advertising-hero__line advertising-hero__line--google" />
-      <span className="advertising-hero__line advertising-hero__line--gbp" />
-      <span className="advertising-hero__line advertising-hero__line--lsa" />
+          <div className="wireflow__page-content">
+            <span className="wireflow__eyebrow" />
+            <strong>Focused landing page</strong>
+            <span className="wireflow__line" />
+            <span className="wireflow__line wireflow__line--short" />
 
-      <div className="advertising-hero__qualification">
-        <span className="advertising-hero__qualification-kicker">
-          Filtered by fit
-        </span>
+            <div className="wireflow__proof">
+              <span>Proof</span>
+              <i />
+              <i />
+              <i />
+            </div>
 
-        <strong>
-          Qualified
-          <br />
-          demand
-        </strong>
+            <span className="wireflow__cta">Clear next step</span>
+          </div>
+        </div>
 
-        <span className="advertising-hero__qualification-rule" />
+        <span className="wireflow__arrow wireflow__arrow--two" />
 
-        <small>Offer + landing page + CRM signal</small>
-      </div>
+        <div className="wireflow__action">
+          <span>03</span>
+          <strong>Call · Form · Booking</strong>
+          <small>One useful conversion action</small>
+        </div>
 
-      <div className="advertising-hero__outcome">
-        <span>Outcome signal</span>
+        <span className="wireflow__arrow wireflow__arrow--three" />
 
-        <div>
-          <i />
-          <strong>Opportunity created</strong>
+        <div className="wireflow__handoff">
+          <span>04</span>
+          <strong>CRM handoff</strong>
+          <small>Source, service interest, and next owner retained</small>
         </div>
       </div>
 
       <div className="service-visual__footer">
-        <span>Channel role</span>
-        <span>Local visibility</span>
-        <span>Lead quality loop</span>
+        <span>Focused page</span>
+        <span>Trust before action</span>
+        <span>Context retained</span>
       </div>
-    </HeroFrame>
+    </DiagramFrame>
   );
 }
 
 function AutomationVisual() {
   return (
-    <HeroFrame
+    <DiagramFrame
       type="automation"
-      eyebrow="Revenue operations"
-      title="Lead → owner → follow-through"
+      eyebrow="Lead lifecycle loop"
+      title="Lead → response → customer loop"
       status="Workflow active"
     >
-      <div className="automation-hero__workflow">
-        <div className="automation-hero__step automation-hero__step--capture">
-          <span className="automation-hero__step-number">01</span>
-          <strong>Capture</strong>
-          <small>Source + service context</small>
+      <div className="lifecycle">
+        <div className="lifecycle__track">
+          <div className="lifecycle__step lifecycle__step--lead">
+            <span>01</span>
+            <strong>Lead enters</strong>
+            <small>Source and service context captured</small>
+          </div>
+
+          <span className="lifecycle__connector" />
+
+          <div className="lifecycle__step lifecycle__step--response">
+            <span>02</span>
+            <strong>Respond</strong>
+            <small>Right owner, right timing</small>
+          </div>
+
+          <span className="lifecycle__connector" />
+
+          <div className="lifecycle__step lifecycle__step--nurture">
+            <span>03</span>
+            <strong>Nurture</strong>
+            <small>Follow-up stays relevant</small>
+          </div>
+
+          <span className="lifecycle__connector" />
+
+          <div className="lifecycle__step lifecycle__step--booked">
+            <span>04</span>
+            <strong>Booked</strong>
+            <small>Pipeline and outcome visible</small>
+          </div>
         </div>
 
-        <span className="automation-hero__connector automation-hero__connector--one" />
+        <div className="lifecycle__loop">
+          <span>Customer loop</span>
 
-        <div className="automation-hero__step automation-hero__step--crm">
-          <span className="automation-hero__step-number">02</span>
-          <strong>Organize</strong>
-          <small>CRM + pipeline stage</small>
+          <div>
+            <strong>Review request</strong>
+            <i />
+            <strong>Reactivation</strong>
+            <i />
+            <strong>Reporting</strong>
+          </div>
         </div>
 
-        <span className="automation-hero__connector automation-hero__connector--two" />
+        <div className="lifecycle__monitor">
+          <span>System status</span>
 
-        <div className="automation-hero__step automation-hero__step--route">
-          <span className="automation-hero__step-number">03</span>
-          <strong>Route</strong>
-          <small>Right owner, right timing</small>
-        </div>
+          <div>
+            <small>Lead owner</small>
+            <strong>Assigned</strong>
+          </div>
 
-        <span className="automation-hero__connector automation-hero__connector--three" />
+          <div>
+            <small>Next action</small>
+            <strong>Active</strong>
+          </div>
 
-        <div className="automation-hero__step automation-hero__step--followup">
-          <span className="automation-hero__step-number">04</span>
-          <strong>Follow up</strong>
-          <small>Automated next step</small>
-        </div>
-
-        <span className="automation-hero__connector automation-hero__connector--four" />
-
-        <div className="automation-hero__step automation-hero__step--booked">
-          <span className="automation-hero__step-number">05</span>
-          <strong>Booked</strong>
-          <small>Visible outcome</small>
+          <div>
+            <small>Outcome</small>
+            <strong>Tracked</strong>
+          </div>
         </div>
       </div>
 
-      <div className="automation-hero__monitor">
-        <span className="automation-hero__monitor-label">System visibility</span>
-
-        <div className="automation-hero__monitor-row">
-          <span>New lead</span>
-          <strong>Assigned</strong>
-        </div>
-
-        <div className="automation-hero__monitor-row">
-          <span>Response SLA</span>
-          <strong>Active</strong>
-        </div>
-
-        <div className="automation-hero__monitor-row">
-          <span>Booking state</span>
-          <strong>Tracked</strong>
-        </div>
+      <div className="service-visual__footer service-visual__footer--ink">
+        <span>Ownership clear</span>
+        <span>Reputation active</span>
+        <span>Reporting visible</span>
       </div>
-
-      <div className="service-visual__footer service-visual__footer--dark">
-        <span>Context retained</span>
-        <span>Ownership assigned</span>
-        <span>Next step visible</span>
-      </div>
-    </HeroFrame>
+    </DiagramFrame>
   );
 }
 
 export default function ServiceVisual({ type }) {
-  if (type === 'conversion') {
-    return <ConversionVisual />;
+  if (type === 'advertising') {
+    return <DemandGenerationVisual />;
   }
 
-  if (type === 'advertising') {
-    return <AdvertisingVisual />;
+  if (type === 'websites-funnels' || type === 'conversion') {
+    return <WebsitesFunnelsVisual />;
   }
 
   return <AutomationVisual />;

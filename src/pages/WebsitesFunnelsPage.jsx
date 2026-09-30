@@ -7,6 +7,7 @@ export default function WebsitesFunnelsPage() {
       title="Websites and funnels built to move serious buyers toward action."
       description="Todd Marketing designs conversion paths that make the offer clearer, the next step easier, and the handoff into your CRM more useful."
       type="conversion"
+      visualType="websites-funnels"
       problems={[
         {
           title: 'Traffic arrives without a clear next step.',

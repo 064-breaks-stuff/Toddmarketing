@@ -34,7 +34,7 @@ const services = [
       'Landing pages',
       'Tracking'
     ],
-    bestFor:
+    bestFit:
       'Businesses that need more qualified local demand and want acquisition connected to the conversion path and lead follow-up.',
     cta: 'Build My Demand System',
     diagram: 'demand'
@@ -67,7 +67,7 @@ const services = [
       'Calls and forms',
       'Lead capture'
     ],
-    bestFor:
+    bestFit:
       'Businesses with existing traffic or local visibility that are not converting enough of that attention into conversations, calls, or booked opportunities.',
     cta: 'See What’s Missing in My Lead Flow',
     diagram: 'capture'
@@ -100,187 +100,222 @@ const services = [
       'Review requests',
       'Reporting'
     ],
-    bestFor:
+    bestFit:
       'Businesses that need their marketing, lead response, sales follow-up, reputation, and customer lifecycle activity to operate as one connected system.',
     cta: 'Connect My Marketing and Follow-Up',
     diagram: 'automation'
   }
 ];
 
-function DemandGenerationDiagram() {
+function DiagramFrame({ label, children, variant }) {
   return (
-    <div className="services-diagram services-diagram--demand" aria-hidden="true">
+    <div
+      className={`services-diagram services-diagram--${variant}`}
+      aria-hidden="true"
+    >
       <div className="services-diagram__grid" />
 
-      <div className="services-diagram__label">
-        Local visibility and demand flow
-      </div>
+      <div className="services-diagram__label">{label}</div>
 
-      <div className="demand-diagram__source demand-diagram__source--search">
-        <span>01</span>
-        <strong>Google Search</strong>
-        <small>High-intent demand</small>
-      </div>
+      {children}
+    </div>
+  );
+}
 
-      <div className="demand-diagram__source demand-diagram__source--lsa">
-        <span>02</span>
-        <strong>Local Services Ads</strong>
-        <small>Local lead flow</small>
-      </div>
-
-      <div className="demand-diagram__source demand-diagram__source--gbp">
-        <span>03</span>
-        <strong>Google Business Profile</strong>
-        <small>Local discovery</small>
-      </div>
-
-      <span className="demand-diagram__line demand-diagram__line--one" />
-      <span className="demand-diagram__line demand-diagram__line--two" />
-      <span className="demand-diagram__line demand-diagram__line--three" />
-
-      <div className="demand-diagram__core">
-        <span>Qualified</span>
-        <strong>Demand</strong>
-        <small>Right service · right location · right intent</small>
-      </div>
-
-      <div className="demand-diagram__outcome">
-        <span>Conversion signals</span>
-
-        <div>
-          <i />
-          Calls
+function DemandGenerationDiagram() {
+  return (
+    <DiagramFrame
+      variant="demand"
+      label="Local visibility and demand flow"
+    >
+      <div className="services-demand-map">
+        <div className="services-demand-map__source services-demand-map__source--search">
+          <span>01</span>
+          <strong>Google Search</strong>
+          <small>High-intent demand</small>
         </div>
 
-        <div>
-          <i />
-          Forms
+        <div className="services-demand-map__source services-demand-map__source--gbp">
+          <span>02</span>
+          <strong>Google Business Profile</strong>
+          <small>Local discovery</small>
         </div>
 
-        <div>
-          <i />
-          Bookings
+        <div className="services-demand-map__source services-demand-map__source--lsa">
+          <span>03</span>
+          <strong>Local Services Ads</strong>
+          <small>Service-area intent</small>
+        </div>
+
+        <span className="services-demand-map__connector services-demand-map__connector--one" />
+        <span className="services-demand-map__connector services-demand-map__connector--two" />
+        <span className="services-demand-map__connector services-demand-map__connector--three" />
+
+        <div className="services-demand-map__filter">
+          <span>Fit filter</span>
+          <strong>Offer + location + intent</strong>
+          <small>Channel and message align before the opportunity enters.</small>
+        </div>
+
+        <span className="services-demand-map__connector services-demand-map__connector--four" />
+
+        <div className="services-demand-map__outcome">
+          <span>Conversion signal</span>
+          <strong>Qualified local opportunity</strong>
+
+          <div>
+            <i />
+            Call
+          </div>
+
+          <div>
+            <i />
+            Form
+          </div>
+
+          <div>
+            <i />
+            Booking
+          </div>
         </div>
       </div>
 
       <div className="services-diagram__footer">
-        <span>Channel fit</span>
-        <span>Message match</span>
-        <span>Useful lead signal</span>
+        <span>Visibility</span>
+        <span>Demand fit</span>
+        <span>Opportunity context</span>
       </div>
-    </div>
+    </DiagramFrame>
   );
 }
 
 function DemandCaptureDiagram() {
   return (
-    <div className="services-diagram services-diagram--capture" aria-hidden="true">
-      <div className="services-diagram__grid" />
+    <DiagramFrame
+      variant="capture"
+      label="Search-to-conversion path"
+    >
+      <div className="services-capture-map">
+        <div className="services-capture-map__entry services-capture-map__entry--gbp">
+          <span>01</span>
+          <strong>GBP</strong>
+          <small>Local discovery</small>
+        </div>
 
-      <div className="services-diagram__label">
-        Search-to-conversion path
-      </div>
+        <div className="services-capture-map__entry services-capture-map__entry--website">
+          <span>02</span>
+          <strong>Website</strong>
+          <small>Offer clarity</small>
+        </div>
 
-      <div className="capture-diagram__entry capture-diagram__entry--gbp">
-        <span>01</span>
-        <strong>GBP</strong>
-        <small>Local search</small>
-      </div>
+        <div className="services-capture-map__entry services-capture-map__entry--landing">
+          <span>03</span>
+          <strong>Landing page</strong>
+          <small>Focused action</small>
+        </div>
 
-      <div className="capture-diagram__entry capture-diagram__entry--website">
-        <span>02</span>
-        <strong>Website</strong>
-        <small>Offer clarity</small>
-      </div>
+        <span className="services-capture-map__connector services-capture-map__connector--one" />
+        <span className="services-capture-map__connector services-capture-map__connector--two" />
+        <span className="services-capture-map__connector services-capture-map__connector--three" />
 
-      <div className="capture-diagram__entry capture-diagram__entry--landing">
-        <span>03</span>
-        <strong>Landing Page</strong>
-        <small>Focused action</small>
-      </div>
+        <div className="services-capture-map__decision">
+          <span>Clear next step</span>
+          <strong>Call · Form · Booking · Chat</strong>
+          <small>One action with less friction and stronger intent.</small>
+        </div>
 
-      <span className="capture-diagram__line capture-diagram__line--one" />
-      <span className="capture-diagram__line capture-diagram__line--two" />
-      <span className="capture-diagram__line capture-diagram__line--three" />
-
-      <div className="capture-diagram__action">
-        <span>Next step</span>
-        <strong>Call · Form · Booking · Chat</strong>
-        <small>Clear action, usable context, less friction</small>
-      </div>
-
-      <div className="capture-diagram__handoff">
-        <span>Lead capture</span>
-        <strong>Source + service interest + contact detail</strong>
+        <div className="services-capture-map__handoff">
+          <span>CRM-ready handoff</span>
+          <strong>Source + service interest + contact detail</strong>
+        </div>
       </div>
 
       <div className="services-diagram__footer">
         <span>Local discovery</span>
-        <span>Conversion clarity</span>
+        <span>Proof before action</span>
         <span>Capture ready</span>
       </div>
-    </div>
+    </DiagramFrame>
   );
 }
 
 function AutomationDiagram() {
   return (
-    <div className="services-diagram services-diagram--automation" aria-hidden="true">
-      <div className="services-diagram__grid" />
+    <DiagramFrame
+      variant="automation"
+      label="Lead lifecycle and reputation loop"
+    >
+      <div className="services-lifecycle">
+        <div className="services-lifecycle__track">
+          <div className="services-lifecycle__step services-lifecycle__step--lead">
+            <span>01</span>
+            <strong>New lead</strong>
+            <small>Source captured</small>
+          </div>
 
-      <div className="services-diagram__label">
-        Lead lifecycle and reputation loop
-      </div>
+          <span className="services-lifecycle__connector" />
 
-      <div className="automation-diagram__track">
-        <div className="automation-diagram__step automation-diagram__step--lead">
-          <span>01</span>
-          <strong>New lead</strong>
-          <small>Source captured</small>
+          <div className="services-lifecycle__step services-lifecycle__step--response">
+            <span>02</span>
+            <strong>Respond</strong>
+            <small>Owner assigned</small>
+          </div>
+
+          <span className="services-lifecycle__connector" />
+
+          <div className="services-lifecycle__step services-lifecycle__step--nurture">
+            <span>03</span>
+            <strong>Nurture</strong>
+            <small>Follow-up active</small>
+          </div>
+
+          <span className="services-lifecycle__connector" />
+
+          <div className="services-lifecycle__step services-lifecycle__step--booked">
+            <span>04</span>
+            <strong>Booked</strong>
+            <small>Outcome visible</small>
+          </div>
         </div>
 
-        <div className="automation-diagram__connector" />
+        <div className="services-lifecycle__loop">
+          <span>Customer loop</span>
 
-        <div className="automation-diagram__step automation-diagram__step--response">
-          <span>02</span>
-          <strong>Respond</strong>
-          <small>Fast first touch</small>
+          <div>
+            <strong>Review request</strong>
+            <i />
+            <strong>Reactivation</strong>
+            <i />
+            <strong>Reporting</strong>
+          </div>
         </div>
 
-        <div className="automation-diagram__connector" />
+        <div className="services-lifecycle__monitor">
+          <span>System visibility</span>
 
-        <div className="automation-diagram__step automation-diagram__step--nurture">
-          <span>03</span>
-          <strong>Nurture</strong>
-          <small>Relevant follow-up</small>
-        </div>
+          <div>
+            <small>Lead owner</small>
+            <strong>Assigned</strong>
+          </div>
 
-        <div className="automation-diagram__connector" />
+          <div>
+            <small>Next action</small>
+            <strong>Active</strong>
+          </div>
 
-        <div className="automation-diagram__step automation-diagram__step--booked">
-          <span>04</span>
-          <strong>Booked job</strong>
-          <small>Pipeline visible</small>
-        </div>
-      </div>
-
-      <div className="automation-diagram__loop">
-        <span>Customer loop</span>
-        <div>
-          <strong>Review request</strong>
-          <i />
-          <strong>Reactivation</strong>
-          <i />
-          <strong>Reporting</strong>
+          <div>
+            <small>Outcome</small>
+            <strong>Tracked</strong>
+          </div>
         </div>
       </div>
 
       <div className="services-diagram__footer services-diagram__footer--ink">
-        <span>Ownership assigned</span>
+        <span>Ownership clear</span>
         <span>Reputation active</span>
-        <span>Outcome visible</span>
+        <span>Reporting visible</span>
       </div>
-    </div>
+    </DiagramFrame>
   );
 }
 

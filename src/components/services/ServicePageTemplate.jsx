@@ -28,6 +28,7 @@ export default function ServicePageTemplate({
   title,
   description,
   type,
+  visualType = type,
   problems,
   deliverables,
   bestFit,
@@ -61,7 +62,7 @@ export default function ServicePageTemplate({
               </Button>
             </div>
 
-            <ServiceVisual type={type} />
+            <ServiceVisual type={visualType} />
           </div>
         </div>
       </section>
@@ -72,7 +73,8 @@ export default function ServicePageTemplate({
             <p className="section-label">Where this helps</p>
 
             <h2 className="section-title">
-              Stronger growth systems begin by removing the friction that slows the next step.
+              Stronger growth systems begin by removing the friction that slows
+              the next step.
             </h2>
           </div>
 
@@ -94,7 +96,8 @@ export default function ServicePageTemplate({
             <p className="section-label">What we build</p>
 
             <h2>
-              The work is designed to connect with the rest of your growth system—not sit beside it.
+              The work is designed to connect with the rest of your growth
+              system—not sit beside it.
             </h2>
           </div>
 
@@ -159,7 +162,8 @@ export default function ServicePageTemplate({
               <p className="section-label">Best fit when</p>
 
               <h2>
-                You need one part of the system to start performing like it belongs to the whole.
+                You need one part of the system to start performing like it
+                belongs to the whole.
               </h2>
             </div>
 
