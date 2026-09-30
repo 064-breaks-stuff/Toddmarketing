@@ -221,7 +221,7 @@
 .system-pulse {
   position: absolute;
   z-index: 6;
-  top: 2.3rem;
+  top: 3.45rem;
   left: 50%;
   display: flex;
   justify-content: center;
@@ -276,11 +276,11 @@
   z-index: 2;
   display: grid;
   min-height: clamp(34rem, 45vw, 42rem);
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: minmax(0, 0.9fr) minmax(15rem, 1.1fr);
-  column-gap: 1.4rem;
-  row-gap: 1.5rem;
-  padding: 4.4rem 1.5rem 3.2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(15.5rem, 0.96fr) minmax(15rem, 1.04fr);
+  column-gap: 1.75rem;
+  row-gap: 1.75rem;
+  padding: 6.15rem 1.75rem 3.35rem;
 }
 
 .opportunity-relay__stage {
@@ -298,13 +298,13 @@
 
 .opportunity-relay__stage--demand {
   --stage-delay: 200ms;
-  padding-right: 0.75rem;
+  padding-right: 1rem;
   border-right: 1px solid rgb(253 253 255 / 12%);
 }
 
 .opportunity-relay__stage--system {
   --stage-delay: 520ms;
-  padding-left: 0.75rem;
+  padding-left: 1rem;
 }
 
 .opportunity-relay__index {
