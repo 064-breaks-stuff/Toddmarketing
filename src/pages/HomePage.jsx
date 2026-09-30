@@ -32,7 +32,7 @@ export default function HomePage() {
             </p>
 
             <div className="hero__actions">
-              <Button to={CONTACT_PATH}>Build My Growth System</Button>
+              <Button to={CONTACT_PATH}>Plan My Local Growth System</Button>
 
               <Link className="hero__text-link" to="/ecosystem">
                 See the connected system
@@ -234,7 +234,7 @@ export default function HomePage() {
               implementation.
             </p>
 
-            <Button to={CONTACT_PATH}>Build My Growth System</Button>
+            <Button to={CONTACT_PATH}>Plan My Local Growth System</Button>
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Check, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Check, ChevronRight } from 'lucide-react';
 import Button from '../ui/Button';
 import PageRail from '../ui/PageRail';
 import ServiceVisual from './ServiceVisual';
@@ -7,18 +7,18 @@ import { CONTACT_PATH } from '../../app/siteConfig';
 
 const serviceLinks = [
   {
-    label: 'Conversion Architecture',
-    to: '/services/websites-funnels',
+    label: 'Demand Capture',
+    to: '/services#demand-capture',
     key: 'conversion'
   },
   {
     label: 'Demand Generation',
-    to: '/services/advertising',
+    to: '/services#demand-generation',
     key: 'advertising'
   },
   {
-    label: 'Revenue Operations',
-    to: '/services/crm-automation',
+    label: 'CRM & Automation',
+    to: '/services#crm-automation',
     key: 'automation'
   }
 ];
@@ -57,9 +57,19 @@ export default function ServicePageTemplate({
 
               <p>{description}</p>
 
-              <Button to={CONTACT_PATH}>
-                Book a Growth Systems Audit
-              </Button>
+              <div className="service-detail-hero__actions">
+                <Button to={CONTACT_PATH}>
+                  Book a Growth Infrastructure Audit
+                </Button>
+
+                <Link
+                  className="service-detail-hero__services-link"
+                  to="/services"
+                >
+                  <ArrowLeft size={16} aria-hidden="true" />
+                  View all services
+                </Link>
+              </div>
             </div>
 
             <ServiceVisual type={visualType} />
@@ -120,7 +130,9 @@ export default function ServicePageTemplate({
         </div>
       </section>
 
-      <section className={`service-detail-mechanism service-detail-mechanism--${type}`}>
+      <section
+        className={`service-detail-mechanism service-detail-mechanism--${type}`}
+      >
         <div className="container">
           <div className="service-detail-mechanism__layout">
             <div>
@@ -181,7 +193,17 @@ export default function ServicePageTemplate({
 
       <section className="service-detail-related">
         <div className="container">
-          <p className="section-label">Related services</p>
+          <div className="service-detail-related__heading">
+            <p className="section-label">Services-first discovery</p>
+
+            <Link
+              className="service-detail-related__all-link"
+              to="/services"
+            >
+              View all services
+              <ArrowUpRight size={17} aria-hidden="true" />
+            </Link>
+          </div>
 
           <div className="service-detail-related__links">
             {relatedServices.map((service) => (
@@ -205,7 +227,7 @@ export default function ServicePageTemplate({
           </div>
 
           <Button to={CONTACT_PATH}>
-            Book a Growth Systems Audit
+            Book a Growth Infrastructure Audit
           </Button>
         </div>
       </section>

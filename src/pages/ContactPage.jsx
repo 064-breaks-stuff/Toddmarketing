@@ -1,6 +1,30 @@
 import { Link } from 'react-router-dom';
+import { CheckCircle2 } from 'lucide-react';
 import BookingEmbed from '../components/ui/BookingEmbed';
 import PageRail from '../components/ui/PageRail';
+
+const preparationItems = [
+  {
+    title: 'Business, website, and service area',
+    copy: 'Bring the basics that shape local demand: what you offer, where you operate, and where buyers currently learn about you.'
+  },
+  {
+    title: 'Current lead sources',
+    copy: 'Note the sources currently creating enquiries, such as Google Business Profile, website, Google Ads, Local Services Ads, referrals, or other channels.'
+  },
+  {
+    title: 'Current systems',
+    copy: 'Identify what is already in place for CRM, follow-up, booking, review requests, source tracking, and reporting.'
+  },
+  {
+    title: 'The main constraint',
+    copy: 'Be ready to describe where momentum is leaking now: visibility, demand, conversion, response speed, reputation, or reporting.'
+  },
+  {
+    title: 'Your desired starting point',
+    copy: 'Decide whether the immediate need is one missing piece or a complete connected system built around the full customer journey.'
+  }
+];
 
 export default function ContactPage() {
   return (
@@ -39,6 +63,40 @@ export default function ContactPage() {
               that supports it.
             </p>
           </div>
+
+          <section
+            className="contact-preparation"
+            aria-labelledby="contact-preparation-title"
+          >
+            <div className="contact-preparation__intro">
+              <p className="section-label">Arrive with useful context</p>
+
+              <h2 id="contact-preparation-title">
+                Start with the constraint—not a generic sales call.
+              </h2>
+
+              <p>
+                This is preparation guidance only. The booking calendar below
+                remains the appointment step; bring this context into the
+                conversation so the audit can focus on the right system gap.
+              </p>
+            </div>
+
+            <ul className="contact-preparation__list">
+              {preparationItems.map((item, index) => (
+                <li key={item.title}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.copy}</p>
+                  </div>
+
+                  <CheckCircle2 size={19} strokeWidth={1.6} aria-hidden="true" />
+                </li>
+              ))}
+            </ul>
+          </section>
 
           <BookingEmbed />
 

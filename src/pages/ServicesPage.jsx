@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowUpRight, Check, ChevronRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import PageRail from '../components/ui/PageRail';
@@ -114,9 +114,7 @@ function DiagramFrame({ label, children, variant }) {
       aria-hidden="true"
     >
       <div className="services-diagram__grid" />
-
       <div className="services-diagram__label">{label}</div>
-
       {children}
     </div>
   );
@@ -124,10 +122,7 @@ function DiagramFrame({ label, children, variant }) {
 
 function DemandGenerationDiagram() {
   return (
-    <DiagramFrame
-      variant="demand"
-      label="Local visibility and demand flow"
-    >
+    <DiagramFrame variant="demand" label="Local visibility and demand flow">
       <div className="services-demand-map">
         <div className="services-demand-map__source services-demand-map__source--search">
           <span>01</span>
@@ -191,10 +186,7 @@ function DemandGenerationDiagram() {
 
 function DemandCaptureDiagram() {
   return (
-    <DiagramFrame
-      variant="capture"
-      label="Search-to-conversion path"
-    >
+    <DiagramFrame variant="capture" label="Search-to-conversion path">
       <div className="services-capture-map">
         <div className="services-capture-map__entry services-capture-map__entry--gbp">
           <span>01</span>
@@ -332,13 +324,34 @@ function ServiceDiagram({ type }) {
 }
 
 export default function ServicesPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [activeService, setActiveService] = useState(services[0]);
+
   const activeIndex = services.findIndex(
     (service) => service.id === activeService.id
   );
 
+  useEffect(() => {
+    const hashId = location.hash.replace('#', '');
+    const matchingService = services.find((service) => service.id === hashId);
+
+    if (!matchingService || matchingService.id === activeService.id) {
+      return;
+    }
+
+    setActiveService(matchingService);
+
+    window.requestAnimationFrame(() => {
+      document
+        .getElementById('service-detail')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [location.hash, activeService.id]);
+
   const selectService = (service) => {
     setActiveService(service);
+    navigate(`/services#${service.id}`, { replace: true });
 
     window.requestAnimationFrame(() => {
       document
@@ -389,7 +402,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <Button to={CONTACT_PATH}>Build My Growth System</Button>
+          <Button to={CONTACT_PATH}>Plan My Local Growth System</Button>
         </div>
       </section>
 
@@ -451,7 +464,9 @@ export default function ServicesPage() {
               onClick={() => selectService(services[2])}
             >
               <span>03</span>
-              <strong>You need marketing, follow-up, and reputation connected.</strong>
+              <strong>
+                You need marketing, follow-up, and reputation connected.
+              </strong>
               <small>
                 Give every lead and customer a clear owner, next step, and
                 visible outcome.
@@ -462,7 +477,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="services-switcher" aria-label="Todd Marketing services">
+      <section
+        className="services-switcher"
+        aria-label="Todd Marketing services"
+      >
         <div className="container">
           <div
             className="services-switcher__tabs"
@@ -498,6 +516,12 @@ export default function ServicesPage() {
             role="tabpanel"
             tabIndex="-1"
           >
+            <div
+              className="services-detail__anchor"
+              id={activeService.id}
+              aria-hidden="true"
+            />
+
             <div className="services-detail__head">
               <div>
                 <p className="section-label">
@@ -553,7 +577,7 @@ export default function ServicesPage() {
 
               <div className="services-detail__fit">
                 <p className="services-detail__label">Best fit when</p>
-                <p>{activeService.bestFor}</p>
+                <p>{activeService.bestFit}</p>
 
                 <div className="services-detail__systems">
                   {activeService.systems.map((system) => (
@@ -565,12 +589,14 @@ export default function ServicesPage() {
 
             <div className="services-detail__action">
               <div>
-                <p className="section-label">Choose the right starting point</p>
+                <p className="section-label">
+                  Choose the right starting point
+                </p>
                 <p>
-                  We can solve a single gap. But businesses that want sustainable
-                  growth are best served by a connected system built across
-                  visibility, demand, conversion, follow-up, reputation, and
-                  reporting.
+                  We can solve a single gap. But businesses that want
+                  sustainable growth are best served by a connected system
+                  built across visibility, demand, conversion, follow-up,
+                  reputation, and reporting.
                 </p>
               </div>
 
@@ -622,7 +648,7 @@ export default function ServicesPage() {
           </div>
 
           <Link className="services-integrated-system__link" to="/ecosystem">
-            Explore the complete growth ecosystem
+            Explore the complete growth system
             <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         </div>

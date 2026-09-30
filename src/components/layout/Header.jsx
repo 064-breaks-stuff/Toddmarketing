@@ -4,7 +4,7 @@ import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { CONTACT_PATH, navItems } from '../../app/siteConfig';
 import Button from '../ui/Button';
 
-const priorityDesktopItems = ['Home', 'Ecosystem', 'Services'];
+const priorityDesktopItems = ['Home', 'Services', 'How It Works', 'Results'];
 
 export default function Header({ darkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,7 +61,9 @@ export default function Header({ darkMode }) {
 
         <div className="site-header__actions">
           <Button to={CONTACT_PATH} variant="header">
-            <span className="header-cta__full">Book a Growth Systems Audit</span>
+            <span className="header-cta__full">
+              Book a Growth Infrastructure Audit
+            </span>
             <span className="header-cta__short">Book an Audit</span>
           </Button>
 
@@ -71,7 +73,9 @@ export default function Header({ darkMode }) {
             onClick={() => setMenuOpen((current) => !current)}
             aria-controls="site-menu"
             aria-expanded={menuOpen}
-            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-label={
+              menuOpen ? 'Close navigation menu' : 'Open navigation menu'
+            }
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -107,10 +111,10 @@ export default function Header({ darkMode }) {
           </nav>
 
           <div className="menu-overlay__footer">
-            <p>Florida-based / Serving businesses nationwide</p>
+            <p>Wisconsin-originated. Serving clients across the United States.</p>
 
             <Button to={CONTACT_PATH} onClick={() => setMenuOpen(false)}>
-              Book a Growth Systems Audit
+              Book a Growth Infrastructure Audit
             </Button>
           </div>
         </div>

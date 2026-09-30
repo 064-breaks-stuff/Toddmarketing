@@ -2651,3 +2651,98 @@
     gap: 0.28rem;
   }
 }
+
+/* Phase 7 — Services-first routing and deep-service return paths */
+
+.services-detail {
+  position: relative;
+}
+
+.services-detail__anchor {
+  position: absolute;
+  top: calc(var(--header-height) * -1);
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.service-detail-hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.service-detail-hero__services-link {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  padding: 0.62rem 0;
+  border-top: 1px solid rgb(253 253 255 / 17%);
+  border-bottom: 1px solid rgb(253 253 255 / 17%);
+  color: rgb(253 253 255 / 72%);
+  font-family: var(--font-display);
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    color 220ms var(--ease-out),
+    border-color 220ms var(--ease-out);
+}
+
+.service-detail-hero__services-link:hover,
+.service-detail-hero__services-link:focus-visible {
+  border-color: #a8c0ff;
+  color: #a8c0ff;
+}
+
+.service-detail-related__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.service-detail-related__heading .section-label {
+  margin: 0;
+}
+
+.service-detail-related__all-link {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--tm-ink);
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 220ms var(--ease-out);
+}
+
+.service-detail-related__all-link:hover,
+.service-detail-related__all-link:focus-visible {
+  color: var(--tm-blue);
+}
+
+@media (max-width: 640px) {
+  .service-detail-related__heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .service-detail-hero__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-detail-hero__services-link,
+  .service-detail-related__all-link {
+    transition: none;
+  }
+}

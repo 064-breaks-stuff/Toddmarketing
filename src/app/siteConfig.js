@@ -7,10 +7,10 @@ export const BOOKING_CALENDAR_URL =
 
 export const navItems = [
   { label: 'Home', to: '/' },
-  { label: 'Ecosystem', to: '/ecosystem' },
   { label: 'Services', to: '/services' },
-  { label: 'Process', to: '/process' },
+  { label: 'How It Works', to: '/process' },
   { label: 'Results', to: '/results' },
+  { label: 'Growth System', to: '/ecosystem' },
   { label: 'About', to: '/about' }
 ];
 
