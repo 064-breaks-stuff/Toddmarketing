@@ -17,35 +17,35 @@ export const navItems = [
 export const systemStages = [
   {
     number: '01',
-    title: 'Demand',
-    shortLabel: 'Demand in',
+    title: 'Visibility & Demand',
+    shortLabel: 'Get found',
     detail:
-      'Create qualified attention through search, paid social, and local-service channels aligned to real buying intent.'
+      'Create qualified local attention through Google Search, Google Business Profile, and Local Services Ads aligned to real buying intent.'
   },
   {
     number: '02',
-    title: 'Capture',
+    title: 'Conversion',
     shortLabel: 'Intent captured',
     detail:
-      'Give that attention a clear next step through conversion architecture, landing experiences, and friction-light pathways.'
+      'Give that attention a clear next step through website paths, landing experiences, and friction-light pathways.'
   },
   {
     number: '03',
-    title: 'Convert',
+    title: 'Follow-Up',
     shortLabel: 'Lead routed',
     detail:
-      'Route, qualify, and respond through CRM intelligence that preserves source, context, ownership, and urgency.'
+      'Route, qualify, and respond through GoHighLevel CRM intelligence that preserves source, context, ownership, and urgency.'
   },
   {
     number: '04',
-    title: 'Retain',
-    shortLabel: 'Follow-up active',
+    title: 'Reputation',
+    shortLabel: 'Customer loop active',
     detail:
-      'Keep opportunity moving through timely nurture, booking workflows, reactivation, and relationship continuity.'
+      'Keep customer momentum moving through nurture, booking workflows, review requests, reactivation, and relationship continuity.'
   },
   {
     number: '05',
-    title: 'Optimize',
+    title: 'Reporting',
     shortLabel: 'Revenue visible',
     detail:
       'Return outcome signals upstream so budgets, offers, automation, and customer journeys improve with context.'

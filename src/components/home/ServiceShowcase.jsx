@@ -1,48 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
-const services = [
-  {
-    number: '01',
-    title: 'Conversion Architecture.',
-    description:
-      'Websites and funnels that give serious buyers a clear next step.',
-    items: [
-      'Website and landing-page architecture',
-      'Offer, messaging, and CTA hierarchy',
-      'Forms, calendars, CRM, and tracking handoff'
-    ],
-    href: '/services/websites-funnels',
-    type: 'conversion'
-  },
-  {
-    number: '02',
-    title: 'Demand Generation.',
-    description:
-      'Local demand built around intent—not activity for activity’s sake.',
-    items: [
-      'Google Ads and search-intent capture',
-      'Google Business Profile visibility support',
-      'Local Services Ads and local lead flow'
-    ],
-    href: '/services/advertising',
-    type: 'demand'
-  },
-  {
-    number: '03',
-    title: 'Revenue Operations.',
-    description:
-      'CRM and automation that keep opportunity moving after it arrives.',
-    items: [
-      'GoHighLevel or existing CRM systems',
-      'n8n orchestration and data movement',
-      'Routing, follow-up, booking, and visibility'
-    ],
-    href: '/services/crm-automation',
-    type: 'operations'
-  }
-];
-
 function ConversionVisual() {
   return (
     <div className="service-showcase__visual service-showcase__visual--conversion">
@@ -127,40 +85,42 @@ function ServiceVisual({ type }) {
   return <OperationsVisual />;
 }
 
-export default function ServiceShowcase() {
+export default function ServiceShowcase({
+  index,
+  eyebrow,
+  title,
+  copy,
+  capabilities,
+  visual
+}) {
   return (
-    <section className="service-showcase">
-      {services.map((service) => (
-        <article
-          className={`service-showcase__feature service-showcase__feature--${service.type}`}
-          key={service.number}
-        >
-          <div className="container">
-            <div className="service-showcase__content">
-              <span className="service-showcase__number">
-                {service.number}
-              </span>
+    <section
+      className={`service-showcase__feature service-showcase__feature--${visual}`}
+    >
+      <div className="container">
+        <div className="service-showcase__content">
+          <span className="service-showcase__number">{index}</span>
 
-              <h2>{service.title}</h2>
+          <p className="service-showcase__eyebrow">{eyebrow}</p>
 
-              <p>{service.description}</p>
+          <h2>{title}</h2>
 
-              <ul className="service-showcase__list">
-                {service.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+          <p>{copy}</p>
 
-              <Link className="service-showcase__link" to={service.href}>
-                Explore {service.title.replace('.', '')}
-                <ArrowUpRight size={17} aria-hidden="true" />
-              </Link>
-            </div>
+          <ul className="service-showcase__list">
+            {capabilities.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
 
-            <ServiceVisual type={service.type} />
-          </div>
-        </article>
-      ))}
+          <Link className="service-showcase__link" to="/services">
+            Explore the connected system
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </Link>
+        </div>
+
+        <ServiceVisual type={visual} />
+      </div>
     </section>
   );
 }

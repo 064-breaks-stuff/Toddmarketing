@@ -9,7 +9,7 @@ const services = [
   {
     id: 'demand-generation',
     number: '01',
-    eyebrow: 'Demand generation',
+    eyebrow: 'Visibility & demand',
     title: 'Generate high-intent local demand.',
     summary:
       'Bring the right people into the system through Google Search, Local Services Ads, local visibility, and campaign pages built to turn intent into a usable inquiry.',
@@ -27,7 +27,13 @@ const services = [
       'Campaign and landing-page alignment around a specific conversion goal',
       'A clearer view of which acquisition signals are producing usable leads'
     ],
-    systems: ['Google Ads', 'Local Services Ads', 'Google Business Profile', 'Landing pages', 'Tracking'],
+    systems: [
+      'Google Ads',
+      'Local Services Ads',
+      'Google Business Profile',
+      'Landing pages',
+      'Tracking'
+    ],
     bestFor:
       'Businesses that need more qualified local demand and want acquisition connected to the conversion path and lead follow-up.',
     cta: 'Build My Demand System',
@@ -36,7 +42,7 @@ const services = [
   {
     id: 'demand-capture',
     number: '02',
-    eyebrow: 'Demand capture',
+    eyebrow: 'Conversion',
     title: 'Turn local search intent into a clear next step.',
     summary:
       'Make it easier for high-intent prospects to find the business, understand the offer, call, submit, book, or start a conversation without unnecessary friction.',
@@ -54,7 +60,13 @@ const services = [
       'Focused conversion experiences for services, locations, and campaigns',
       'Lead details structured for a useful CRM handoff'
     ],
-    systems: ['Google Business Profile', 'Website', 'Landing pages', 'Calls and forms', 'Lead capture'],
+    systems: [
+      'Google Business Profile',
+      'Website',
+      'Landing pages',
+      'Calls and forms',
+      'Lead capture'
+    ],
     bestFor:
       'Businesses with existing traffic or local visibility that are not converting enough of that attention into conversations, calls, or booked opportunities.',
     cta: 'See What’s Missing in My Lead Flow',
@@ -63,8 +75,8 @@ const services = [
   {
     id: 'crm-automation',
     number: '03',
-    eyebrow: 'CRM & automation',
-    title: 'Connect marketing, follow-up, and reporting.',
+    eyebrow: 'Follow-up & growth',
+    title: 'Connect marketing, follow-up, reputation, and reporting.',
     summary:
       'Use GoHighLevel and connected workflows to make every lead easier to route, respond to, nurture, book, review, reactivate, and understand.',
     problem:
@@ -81,9 +93,15 @@ const services = [
       'Automated follow-up that supports the team rather than replacing it',
       'Pipeline and reporting context that connects marketing activity to outcomes'
     ],
-    systems: ['GoHighLevel', 'Pipelines', 'Automation', 'Review requests', 'Reporting'],
+    systems: [
+      'GoHighLevel',
+      'Pipelines',
+      'Automation',
+      'Review requests',
+      'Reporting'
+    ],
     bestFor:
-      'Businesses that need their marketing, lead response, sales follow-up, and customer lifecycle activity to operate as one connected system.',
+      'Businesses that need their marketing, lead response, sales follow-up, reputation, and customer lifecycle activity to operate as one connected system.',
     cta: 'Connect My Marketing and Follow-Up',
     diagram: 'automation'
   }
@@ -211,7 +229,7 @@ function AutomationDiagram() {
       <div className="services-diagram__grid" />
 
       <div className="services-diagram__label">
-        Lead lifecycle automation
+        Lead lifecycle and reputation loop
       </div>
 
       <div className="automation-diagram__track">
@@ -247,7 +265,7 @@ function AutomationDiagram() {
       </div>
 
       <div className="automation-diagram__loop">
-        <span>After the job</span>
+        <span>Customer loop</span>
         <div>
           <strong>Review request</strong>
           <i />
@@ -259,7 +277,7 @@ function AutomationDiagram() {
 
       <div className="services-diagram__footer services-diagram__footer--ink">
         <span>Ownership assigned</span>
-        <span>Follow-up active</span>
+        <span>Reputation active</span>
         <span>Outcome visible</span>
       </div>
     </div>
@@ -313,9 +331,9 @@ export default function ServicesPage() {
 
               <p>
                 Todd Marketing helps quality service businesses get found,
-                convert demand, and follow through—without treating every
-                channel, page, lead, and customer interaction as a separate
-                problem.
+                convert demand, follow up, build reputation, and report on
+                outcomes—without treating every channel, page, lead, and
+                customer interaction as a separate problem.
               </p>
             </div>
 
@@ -328,8 +346,10 @@ export default function ServicesPage() {
               </strong>
 
               <p>
-                We can repair a missing piece. The strongest results come from
-                owning the connected system.
+                We can solve a single gap. But businesses that want sustainable
+                growth are best served by a connected system built across
+                visibility, demand, conversion, follow-up, reputation, and
+                reporting.
               </p>
             </div>
           </div>
@@ -396,9 +416,10 @@ export default function ServicesPage() {
               onClick={() => selectService(services[2])}
             >
               <span>03</span>
-              <strong>You need marketing and follow-up connected.</strong>
+              <strong>You need marketing, follow-up, and reputation connected.</strong>
               <small>
-                Give every lead a clear owner, next step, and visible outcome.
+                Give every lead and customer a clear owner, next step, and
+                visible outcome.
               </small>
               <ChevronRight size={19} aria-hidden="true" />
             </button>
@@ -511,8 +532,10 @@ export default function ServicesPage() {
               <div>
                 <p className="section-label">Choose the right starting point</p>
                 <p>
-                  The goal is not a collection of isolated tactics. It is a
-                  connected growth system that makes the next best action clear.
+                  We can solve a single gap. But businesses that want sustainable
+                  growth are best served by a connected system built across
+                  visibility, demand, conversion, follow-up, reputation, and
+                  reporting.
                 </p>
               </div>
 
@@ -533,10 +556,9 @@ export default function ServicesPage() {
             </h2>
 
             <p>
-              Google Business Profile, Google Ads, Local Services Ads, campaign
-              pages, website conversion paths, GoHighLevel follow-up, reviews,
-              and reporting become more useful when the handoff between each
-              stage is designed on purpose.
+              Visibility, demand generation, conversion paths, GoHighLevel
+              follow-up, review requests, and reporting become more useful when
+              the handoff between every stage is designed on purpose.
             </p>
           </div>
 
@@ -560,7 +582,7 @@ export default function ServicesPage() {
             <div>
               <span>03</span>
               <strong>Follow up and grow</strong>
-              <small>GoHighLevel · automation · reviews · reporting</small>
+              <small>GoHighLevel · reviews · automation · reporting</small>
             </div>
           </div>
 
@@ -575,10 +597,10 @@ export default function ServicesPage() {
         <div className="container">
           <div>
             <p className="section-label">Build from the constraint</p>
-            <h2>See what is missing in your lead flow.</h2>
+            <h2>Plan the system behind your next stage of growth.</h2>
           </div>
 
-          <Button to={CONTACT_PATH}>Book a Growth Infrastructure Audit</Button>
+          <Button to={CONTACT_PATH}>Plan My Local Growth System</Button>
         </div>
       </section>
 

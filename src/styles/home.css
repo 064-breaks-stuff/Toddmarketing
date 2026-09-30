@@ -130,9 +130,7 @@
   flex: 0 0 auto;
 }
 
-/* ========================================================== */
-/* Opportunity Relay                                          */
-/* ========================================================== */
+/* Opportunity Relay */
 
 .opportunity-relay {
   position: relative;
@@ -219,8 +217,6 @@
   background: #4ccf87;
   box-shadow: 0 0 0.8rem rgb(76 207 135 / 68%);
 }
-
-/* System Pulse */
 
 .system-pulse {
   position: absolute;
@@ -395,8 +391,6 @@
   stroke-width: 1.5;
 }
 
-/* Outcome */
-
 .opportunity-relay__outcome {
   position: relative;
   display: grid;
@@ -564,8 +558,6 @@
   top: 3.5rem;
 }
 
-/* Footer */
-
 .opportunity-relay__footer {
   position: absolute;
   z-index: 4;
@@ -583,9 +575,7 @@
   text-transform: uppercase;
 }
 
-/* ========================================================== */
-/* Home editorial sections                                    */
-/* ========================================================== */
+/* Home editorial sections */
 
 .friction-section {
   padding: var(--space-7) 0;
@@ -867,10 +857,6 @@
 
 /* Service showcase */
 
-.service-showcase {
-  min-width: 0;
-}
-
 .service-showcase__feature {
   position: relative;
   min-width: 0;
@@ -919,7 +905,21 @@
 
 .service-showcase__number {
   display: block;
-  margin-bottom: 1.3rem;
+  margin-bottom: 0.9rem;
+}
+
+.service-showcase__eyebrow {
+  margin: 0 0 1.2rem;
+  color: var(--tm-blue);
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.service-showcase__feature--demand .service-showcase__eyebrow {
+  color: #a8c0ff;
 }
 
 .service-showcase__content h2 {
@@ -987,17 +987,12 @@
   border-color: var(--tm-line-dark);
 }
 
-.service-showcase__visual-signal,
-.service-showcase__visual::before,
-.service-showcase__visual::after {
-  z-index: 0;
-  pointer-events: none;
-}
-
 .service-showcase__visual::before {
   position: absolute;
+  z-index: 0;
   inset: 0;
   content: "";
+  pointer-events: none;
   background-image:
     linear-gradient(rgb(17 18 22 / 5%) 1px, transparent 1px),
     linear-gradient(90deg, rgb(17 18 22 / 5%) 1px, transparent 1px);
@@ -1014,8 +1009,6 @@
   position: relative;
   z-index: 2;
 }
-
-/* Conversion visual */
 
 .service-showcase__visual--conversion {
   background:
@@ -1101,8 +1094,6 @@
   bottom: 1.3rem;
   background: var(--tm-blue);
 }
-
-/* Demand visual */
 
 .service-showcase__visual--demand {
   background:
@@ -1196,7 +1187,6 @@
   top: 50%;
   left: 55%;
   width: 25%;
-  transform: rotate(0deg);
 }
 
 .service-showcase__intent-pulse {
@@ -1211,8 +1201,6 @@
   box-shadow: 0 0 1rem var(--tm-blue);
   animation: service-intent-pulse 3.6s ease-in-out infinite;
 }
-
-/* Revenue operations visual */
 
 .service-showcase__visual--operations {
   background:
@@ -1294,7 +1282,75 @@
   transform: rotate(31deg);
 }
 
-/* Founder section */
+.integrated-growth-section {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-7) 0;
+  color: var(--tm-paper);
+  background:
+    radial-gradient(circle at 76% 48%, rgb(0 58 249 / 18%), transparent 27rem),
+    #121318;
+}
+
+.integrated-growth-section::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgb(253 253 255 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(253 253 255 / 4%) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+.integrated-growth-section__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: clamp(2.5rem, 8vw, 9rem);
+  align-items: end;
+}
+
+.integrated-growth-section .section-label {
+  color: #9cb4ff;
+}
+
+.integrated-growth-section h2 {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(2.8rem, 5vw, 5.8rem);
+  font-weight: 500;
+  letter-spacing: -0.085em;
+  line-height: 0.88;
+}
+
+.integrated-growth-section__body > p {
+  max-width: 50ch;
+  margin: 0;
+  color: rgb(253 253 255 / 67%);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.integrated-growth-section__layers {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin: 1.75rem 0 2rem;
+}
+
+.integrated-growth-section__layers span {
+  padding: 0.48rem 0.6rem;
+  border: 1px solid rgb(253 253 255 / 17%);
+  color: #a8c0ff;
+  font-family: var(--font-display);
+  font-size: 0.48rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
 .accountability-section {
   position: relative;
@@ -1352,9 +1408,7 @@
   font-size: 1.08rem;
 }
 
-/* ========================================================== */
-/* Motion                                                     */
-/* ========================================================== */
+/* Motion */
 
 @keyframes system-pulse-cycle {
   0% {
@@ -1441,34 +1495,6 @@
   }
 }
 
-@keyframes relay-node-reveal {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes relay-signal {
-  0%,
-  15% {
-    top: 0;
-    opacity: 0;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  66% {
-    opacity: 0.9;
-  }
-
-  82%,
-  100% {
-    top: 82%;
-    opacity: 0;
-  }
-}
-
 @keyframes accordion-panel-in {
   from {
     opacity: 0;
@@ -1494,9 +1520,7 @@
   }
 }
 
-/* ========================================================== */
-/* Responsive                                                 */
-/* ========================================================== */
+/* Responsive */
 
 @media (max-width: 1120px) {
   .hero__inner {
@@ -1527,6 +1551,7 @@
   .hero__inner,
   .friction-section__heading,
   .system-section__intro,
+  .integrated-growth-section__inner,
   .accountability-section__inner {
     grid-template-columns: 1fr;
   }
@@ -1651,16 +1676,6 @@
     font-size: 0.64rem;
   }
 
-  .opportunity-relay__sources,
-  .opportunity-relay__system-tags {
-    gap: 0.32rem;
-  }
-
-  .opportunity-relay__sources span,
-  .opportunity-relay__system-tags span {
-    font-size: 0.43rem;
-  }
-
   .opportunity-relay__system-icon {
     width: 2.35rem;
     height: 2.35rem;
@@ -1709,10 +1724,6 @@
   .opportunity-relay__outcome-status {
     grid-column: 3;
     margin-top: 0.6rem;
-  }
-
-  .opportunity-relay__result-status span {
-    font-size: 0.42rem;
   }
 
   .opportunity-relay__footer {
@@ -1780,8 +1791,6 @@
   .system-pulse__message,
   .opportunity-relay__stage,
   .opportunity-relay__outcome,
-  .opportunity-relay__axis-signal,
-  .opportunity-relay__axis-node,
   .service-showcase__intent-pulse,
   .system-accordion__panel {
     animation: none;
@@ -1802,8 +1811,7 @@
   }
 
   .opportunity-relay__stage,
-  .opportunity-relay__outcome,
-  .opportunity-relay__axis-node {
+  .opportunity-relay__outcome {
     opacity: 1;
     transform: none;
   }

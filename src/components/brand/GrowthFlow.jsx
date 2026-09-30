@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 const statusMessages = [
-  'System online / Handoffs connected',
-  'Demand captured / CRM routed',
+  'Visibility connected / Demand entering',
+  'Lead captured / CRM routed',
   'Follow-up active / Context preserved',
-  'Opportunity visible / Next step ready'
+  'Reputation and reporting / Loop visible'
 ];
 
 function SystemIcon() {
@@ -63,7 +63,7 @@ export default function GrowthFlow() {
     <div
       className="opportunity-relay"
       role="img"
-      aria-label="Todd Marketing turns qualified demand from Google Search, Google Business Profile, and Local Services Ads into a sales-ready opportunity through a connected growth system."
+      aria-label="Todd Marketing connects visibility, demand, conversion, follow-up, reputation, and reporting into a local growth system."
     >
       <div className="opportunity-relay__grid" aria-hidden="true" />
       <div className="opportunity-relay__vignette" aria-hidden="true" />
@@ -84,11 +84,13 @@ export default function GrowthFlow() {
         <section className="opportunity-relay__stage opportunity-relay__stage--demand">
           <span className="opportunity-relay__index">01</span>
 
-          <p className="opportunity-relay__eyebrow">Demand enters</p>
+          <p className="opportunity-relay__eyebrow">
+            Visibility and demand
+          </p>
 
           <h2>
-            Qualified
-            <span> attention.</span>
+            Get found.
+            <span> Create demand.</span>
           </h2>
 
           <p className="opportunity-relay__copy">
@@ -110,21 +112,23 @@ export default function GrowthFlow() {
             <SystemIcon />
           </div>
 
-          <p className="opportunity-relay__eyebrow">Todd Growth System</p>
+          <p className="opportunity-relay__eyebrow">
+            Conversion and follow-up
+          </p>
 
           <h2>
             Capture. Route.
-            <span> Follow up.</span>
+            <span> Grow.</span>
           </h2>
 
           <p className="opportunity-relay__copy">
-            Conversion architecture, CRM intelligence, and automation work as
-            one connected operating layer.
+            Conversion paths, CRM intelligence, automation, reputation, and
+            reporting work as one connected operating layer.
           </p>
 
           <div className="opportunity-relay__tags">
             <span>Website + Funnel</span>
-            <span>CRM</span>
+            <span>GoHighLevel</span>
             <span>Automation</span>
           </div>
         </section>
@@ -133,7 +137,7 @@ export default function GrowthFlow() {
           <div className="opportunity-relay__outcome-header">
             <span className="opportunity-relay__index">03</span>
             <span className="opportunity-relay__outcome-label">
-              System outcome
+              Connected outcome
             </span>
           </div>
 
@@ -143,12 +147,13 @@ export default function GrowthFlow() {
 
           <div className="opportunity-relay__outcome-copy">
             <h2>
-              Sales-Ready
-              <span> Opportunity.</span>
+              Visible Growth
+              <span> System.</span>
             </h2>
 
             <p>
-              Booked, routed, and visible to the right team.
+              Opportunities, customer follow-up, reviews, and reporting stay
+              connected.
             </p>
           </div>
 
@@ -160,7 +165,7 @@ export default function GrowthFlow() {
 
             <span>
               <i />
-              Routed
+              Reviewed
             </span>
 
             <span>
@@ -178,7 +183,7 @@ export default function GrowthFlow() {
       </div>
 
       <div className="opportunity-relay__footer" aria-hidden="true">
-        Demand → System → Opportunity
+        Visibility → Demand → Conversion → Follow-Up → Reputation → Reporting
       </div>
     </div>
   );

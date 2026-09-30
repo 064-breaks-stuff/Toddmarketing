@@ -15,13 +15,14 @@ export default function ContactPage() {
           <p className="hero__eyebrow">Todd Marketing / Contact</p>
 
           <h1>
-            Find the point where your growth system is losing momentum.
+            Plan the connected system behind your next stage of growth.
           </h1>
 
           <p>
-            Book a Growth Systems Audit to map the path from demand to
-            opportunity and identify the work that will create the most useful
-            next move.
+            We can solve a single gap. But businesses that want sustainable
+            growth are best served by a connected system built across
+            visibility, demand, conversion, follow-up, reputation, and
+            reporting.
           </p>
         </div>
       </section>
@@ -29,13 +30,13 @@ export default function ContactPage() {
       <section className="contact-booking">
         <div className="container">
           <div className="contact-booking__intro">
-            <p className="section-label">Book a Growth Systems Audit</p>
+            <p className="section-label">Plan a Growth Infrastructure Audit</p>
 
             <p>
-              Choose a time that works. We will use the conversation to
-              understand your current acquisition, conversion, and
-              follow-through systems before recommending a practical next
-              step.
+              Choose a time that works. We will identify where local demand,
+              conversion, follow-up, reputation, or reporting is losing
+              momentum—then map the practical next step and the wider system
+              that supports it.
             </p>
           </div>
 

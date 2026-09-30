@@ -195,6 +195,7 @@
 }
 
 .services-hero__system-note p {
+  max-width: 35ch;
   margin: 1.25rem 0 0;
   color: rgb(253 253 255 / 57%);
   font-size: 0.86rem;

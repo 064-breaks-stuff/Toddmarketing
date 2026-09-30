@@ -5,6 +5,44 @@ import PageRail from '../components/ui/PageRail';
 import Button from '../components/ui/Button';
 import { CONTACT_PATH, systemStages } from '../app/siteConfig';
 
+const systemLayers = [
+  {
+    number: '01',
+    title: 'Visibility & Demand',
+    detail:
+      'Google Search, Google Business Profile, and Local Services Ads create qualified local attention where buyers are already looking.',
+    label: 'Google Ads / GBP / LSAs'
+  },
+  {
+    number: '02',
+    title: 'Conversion',
+    detail:
+      'Website paths, service landing pages, offers, calls, forms, and booking actions make the next step clear once attention arrives.',
+    label: 'Website / Landing Pages / Calls / Forms'
+  },
+  {
+    number: '03',
+    title: 'Follow-Up',
+    detail:
+      'GoHighLevel captures source context, assigns ownership, activates the right response, and keeps the pipeline visible.',
+    label: 'CRM / Routing / Booking / Automation'
+  },
+  {
+    number: '04',
+    title: 'Reputation',
+    detail:
+      'Review requests, nurture, reactivation, and customer continuity help a completed job become future demand and trust.',
+    label: 'Reviews / Nurture / Reactivation'
+  },
+  {
+    number: '05',
+    title: 'Reporting',
+    detail:
+      'Outcome signals return upstream so acquisition, conversion, operations, and the next growth decision improve with context.',
+    label: 'Attribution / Reporting / Iteration'
+  }
+];
+
 export default function EcosystemPage() {
   return (
     <>
@@ -25,18 +63,20 @@ export default function EcosystemPage() {
           </h1>
 
           <p>
-            Each stage is designed to make the next one stronger—from the first
-            signal of local demand to the visibility needed to improve it.
+            We can solve a single gap. But businesses that want sustainable
+            growth are best served by a connected system built across
+            visibility, demand, conversion, follow-up, reputation, and
+            reporting.
           </p>
         </div>
 
         <div
           className="growth-system-map"
           role="img"
-          aria-label="Growth system map showing Google Ads, Google Business Profile, and Local Services Ads feeding websites and landing pages, then CRM, automation, and booked opportunities."
+          aria-label="Connected local growth map showing visibility and demand feeding conversion, follow-up, reputation, and reporting."
         >
           <div className="growth-system-map__header" aria-hidden="true">
-            <span>System map / Demand to opportunity</span>
+            <span>System map / Local growth loop</span>
             <span>Wisconsin + Nationwide</span>
           </div>
 
@@ -81,8 +121,8 @@ export default function EcosystemPage() {
                   <i />
                   <i />
                 </div>
-                <strong>Website / Landing Page</strong>
-                <small>Clarify the offer and capture intent</small>
+                <strong>Conversion Path</strong>
+                <small>Website, landing page, offer, call, form, or booking</small>
               </article>
 
               <div className="growth-system-map__arrow" aria-hidden="true">
@@ -95,8 +135,8 @@ export default function EcosystemPage() {
                   <i />
                   <i />
                 </div>
-                <strong>CRM Intelligence</strong>
-                <small>Route, qualify, and assign the lead</small>
+                <strong>GoHighLevel Follow-Up</strong>
+                <small>Route, qualify, assign, and respond with context</small>
               </article>
 
               <div className="growth-system-map__arrow" aria-hidden="true">
@@ -110,8 +150,8 @@ export default function EcosystemPage() {
                   <i />
                   <i />
                 </div>
-                <strong>Automation</strong>
-                <small>Follow up while context stays intact</small>
+                <strong>Reputation Loop</strong>
+                <small>Review requests, nurture, and reactivation</small>
               </article>
 
               <div className="growth-system-map__arrow" aria-hidden="true">
@@ -126,15 +166,15 @@ export default function EcosystemPage() {
                     <path d="M8 18h32M16 7v7M32 7v7M17 28l4 4 10-10" />
                   </svg>
                 </div>
-                <strong>Booked Opportunity</strong>
-                <small>Sales team receives a visible next step</small>
+                <strong>Visible Growth</strong>
+                <small>Booked opportunity, customer outcome, and reporting signal</small>
               </article>
             </div>
           </div>
 
           <div className="growth-system-map__footer" aria-hidden="true">
-            <span>Input / Qualified attention</span>
-            <span>Output / Revenue-ready opportunity</span>
+            <span>Input / Qualified local attention</span>
+            <span>Output / Connected growth signal</span>
           </div>
         </div>
       </section>
@@ -142,18 +182,18 @@ export default function EcosystemPage() {
       <section className="ecosystem-map-section">
         <div className="container">
           <div className="ecosystem-map-section__intro">
-            <p className="section-label">Five connected stages</p>
+            <p className="section-label">Five connected layers</p>
             <h2 className="section-title">
               The right work depends on where momentum is being lost.
             </h2>
           </div>
 
           <div className="ecosystem-stages">
-            {systemStages.map((stage, index) => (
-              <article className="ecosystem-stage" key={stage.number}>
+            {systemLayers.map((layer, index) => (
+              <article className="ecosystem-stage" key={layer.number}>
                 <div className="ecosystem-stage__top">
                   <span className="ecosystem-stage__number">
-                    {stage.number}
+                    {layer.number}
                   </span>
 
                   <span className="ecosystem-stage__line" aria-hidden="true" />
@@ -161,35 +201,21 @@ export default function EcosystemPage() {
 
                 <div className="ecosystem-stage__content">
                   <p className="ecosystem-stage__kicker">
-                    {stage.shortLabel}
+                    {systemStages[index]?.shortLabel}
                   </p>
 
-                  <h2>{stage.title}</h2>
+                  <h2>{layer.title}</h2>
 
-                  <p>{stage.detail}</p>
+                  <p>{layer.detail}</p>
 
                   <div className="ecosystem-stage__detail">
-                    <span>
-                      {index === 0 &&
-                        'Google Ads / Google Business Profile / LSAs'}
-                    </span>
-                    <span>
-                      {index === 1 && 'Websites / Landing Pages / Offers'}
-                    </span>
-                    <span>{index === 2 && 'CRM / Routing / Booking'}</span>
-                    <span>
-                      {index === 3 &&
-                        'Nurture / Automation / Reactivation'}
-                    </span>
-                    <span>
-                      {index === 4 && 'Attribution / Reporting / Iteration'}
-                    </span>
+                    <span>{layer.label}</span>
                   </div>
                 </div>
 
                 <div className="ecosystem-stage__visual" aria-hidden="true">
                   <div className={`ecosystem-stage__arch ecosystem-stage__arch--${index + 1}`} />
-                  <span>{stage.number}</span>
+                  <span>{layer.number}</span>
                 </div>
               </article>
             ))}
@@ -201,17 +227,18 @@ export default function EcosystemPage() {
         <div className="container ecosystem-entry-section__inner">
           <div>
             <p className="section-label">Start where it matters</p>
-            <h2>Not every business needs every layer on day one.</h2>
+            <h2>Begin with the constraint. Build toward the connected system.</h2>
           </div>
 
           <div>
             <p>
-              The Growth Systems Audit identifies the point where your current
-              process is leaking attention, time, context, or opportunity. From
-              there, the system can be strengthened in the right order.
+              The Growth Infrastructure Audit identifies the point where your
+              current system is losing attention, time, context, reputation, or
+              opportunity. From there, we can solve the immediate gap and map
+              the connected system that supports sustainable growth.
             </p>
 
-            <Button to={CONTACT_PATH}>Book a Growth Systems Audit</Button>
+            <Button to={CONTACT_PATH}>Plan My Local Growth System</Button>
           </div>
         </div>
       </section>
@@ -221,15 +248,15 @@ export default function EcosystemPage() {
           <p className="section-label">Continue through the system</p>
 
           <div className="ecosystem-explore-section__links">
-            <Link to="/">
+            <Link to="/services">
               <span>01</span>
-              <strong>Return Home</strong>
+              <strong>See What’s Missing in Your Lead Flow</strong>
               <ArrowUpRight size={20} aria-hidden="true" />
             </Link>
 
             <Link to={CONTACT_PATH}>
               <span>02</span>
-              <strong>Book a Growth Systems Audit</strong>
+              <strong>Plan Your Local Growth System</strong>
               <ArrowUpRight size={20} aria-hidden="true" />
             </Link>
           </div>
@@ -239,7 +266,7 @@ export default function EcosystemPage() {
       <div className="container">
         <PageRail
           previous={{ label: 'Todd Marketing Home', to: '/' }}
-          next={{ label: 'Book a Growth Systems Audit', to: CONTACT_PATH }}
+          next={{ label: 'Plan Your Local Growth System', to: CONTACT_PATH }}
         />
       </div>
     </>
