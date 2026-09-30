@@ -3,7 +3,7 @@ import { Play, ArrowUpRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import PageRail from '../components/ui/PageRail';
 import { CONTACT_PATH } from '../app/siteConfig';
-import samuelToddPortrait from '../assets/images/samuel-todd-founder.jpg';
+import samuelToddPortrait from '../images/samuel-todd-founder.jpeg';
 
 const bookingUrl =
   'https://api.leadconnectorhq.com/widget/booking/3QmePKKqRKrOVCL5shcI';

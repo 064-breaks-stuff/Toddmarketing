@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import BrandLogo from '../brand/BrandLogo';
 import { CONTACT_PATH } from '../../app/siteConfig';
 
 export default function Footer() {
@@ -30,7 +29,10 @@ export default function Footer() {
               to="/"
               aria-label="Todd Marketing home"
             >
-              <BrandLogo />
+              <img
+                src="/brand/todd-marketing-logo-white.svg"
+                alt="Todd Marketing"
+              />
             </Link>
 
             <p className="site-footer__location">
