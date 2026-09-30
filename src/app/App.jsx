@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import ScrollToTop from '../components/layout/ScrollToTop';
+import Seo from './Seo';
 import HomePage from '../pages/HomePage';
 import EcosystemPage from '../pages/EcosystemPage';
 import ServicesPage from '../pages/ServicesPage';
@@ -26,6 +27,7 @@ function AppShell() {
   return (
     <div className={darkMode ? 'app-shell app-shell--dark' : 'app-shell'}>
       <ScrollToTop />
+      <Seo />
       <Header darkMode={darkMode} />
 
       <main>
@@ -33,9 +35,15 @@ function AppShell() {
           <Route path="/" element={<HomePage />} />
           <Route path="/ecosystem" element={<EcosystemPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/websites-funnels" element={<WebsitesFunnelsPage />} />
+          <Route
+            path="/services/websites-funnels"
+            element={<WebsitesFunnelsPage />}
+          />
           <Route path="/services/advertising" element={<AdvertisingPage />} />
-          <Route path="/services/crm-automation" element={<CrmAutomationPage />} />
+          <Route
+            path="/services/crm-automation"
+            element={<CrmAutomationPage />}
+          />
           <Route path="/process" element={<ProcessPage />} />
           <Route path="/results" element={<ResultsPage />} />
           <Route path="/about" element={<AboutPage />} />
