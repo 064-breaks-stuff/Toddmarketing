@@ -1,32 +1,42 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ChevronDown } from 'lucide-react';
 import BookingEmbed from '../components/ui/BookingEmbed';
 import PageRail from '../components/ui/PageRail';
 
 const preparationItems = [
   {
+    id: 'business-service-area',
     title: 'Business, website, and service area',
     copy: 'Bring the basics that shape local demand: what you offer, where you operate, and where buyers currently learn about you.'
   },
   {
+    id: 'lead-sources',
     title: 'Current lead sources',
     copy: 'Note the sources currently creating enquiries, such as Google Business Profile, website, Google Ads, Local Services Ads, referrals, or other channels.'
   },
   {
+    id: 'current-systems',
     title: 'Current systems',
     copy: 'Identify what is already in place for CRM, follow-up, booking, review requests, source tracking, and reporting.'
   },
   {
+    id: 'main-constraint',
     title: 'The main constraint',
     copy: 'Be ready to describe where momentum is leaking now: visibility, demand, conversion, response speed, reputation, or reporting.'
   },
   {
+    id: 'desired-starting-point',
     title: 'Your desired starting point',
     copy: 'Decide whether the immediate need is one missing piece or a complete connected system built around the full customer journey.'
   }
 ];
 
 export default function ContactPage() {
+  const [activePreparationId, setActivePreparationId] = useState(
+    preparationItems[0].id
+  );
+
   return (
     <>
       <section className="contact-hero">
@@ -82,20 +92,70 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <ul className="contact-preparation__list">
-              {preparationItems.map((item, index) => (
-                <li key={item.title}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
+            <div className="contact-preparation__accordion">
+              {preparationItems.map((item, index) => {
+                const isActive = activePreparationId === item.id;
+                const triggerId = `contact-preparation-trigger-${item.id}`;
+                const panelId = `contact-preparation-panel-${item.id}`;
 
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.copy}</p>
-                  </div>
+                return (
+                  <article
+                    className={`contact-preparation__item${
+                      isActive ? ' is-active' : ''
+                    }`}
+                    key={item.id}
+                  >
+                    <h3 className="contact-preparation__item-heading">
+                      <button
+                        id={triggerId}
+                        className="contact-preparation__trigger"
+                        type="button"
+                        aria-expanded={isActive}
+                        aria-controls={panelId}
+                        onClick={() => setActivePreparationId(item.id)}
+                      >
+                        <span
+                          className="contact-preparation__number"
+                          aria-hidden="true"
+                        >
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
 
-                  <CheckCircle2 size={19} strokeWidth={1.6} aria-hidden="true" />
-                </li>
-              ))}
-            </ul>
+                        <span className="contact-preparation__title">
+                          {item.title}
+                        </span>
+
+                        <ChevronDown
+                          className="contact-preparation__chevron"
+                          size={20}
+                          strokeWidth={1.6}
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </h3>
+
+                    <div
+                      id={panelId}
+                      className="contact-preparation__panel"
+                      role="region"
+                      aria-labelledby={triggerId}
+                      hidden={!isActive}
+                    >
+                      <div className="contact-preparation__panel-inner">
+                        <p>{item.copy}</p>
+
+                        <CheckCircle2
+                          className="contact-preparation__check"
+                          size={20}
+                          strokeWidth={1.6}
+                          aria-hidden="true"
+                        />
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           </section>
 
           <BookingEmbed />

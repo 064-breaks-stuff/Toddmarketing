@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           <h1>Privacy Policy.</h1>
 
           <p>
-            How Social 1st Marketing DBA Todd Marketing collects, uses,
+            How Todd Marketing collects, uses,
             discloses, and protects personal information.
           </p>
 
