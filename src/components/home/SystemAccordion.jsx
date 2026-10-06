@@ -113,7 +113,14 @@ function DeviceFrame({ title, children }) {
           <span className="system-device__demo">Illustrative interface</span>
         </div>
 
-        <div className="system-device__viewport">{children}</div>
+        <div
+          className="system-device__viewport"
+          tabIndex={0}
+          role="region"
+          aria-label={`${title} illustrative interface`}
+        >
+          {children}
+        </div>
       </div>
 
       <div className="system-device__base" aria-hidden="true">
