@@ -17,9 +17,9 @@ import { CONTACT_PATH } from '../app/siteConfig';
 
 const caseStudies = [
   {
-    id: 'hearts-and-minds',
+    id: 'childcare',
     number: '01',
-    client: 'Hearts and Minds Childcare',
+    client: 'A Childcare Center',
     category: 'Childcare / Google Local Services Ads',
     period: 'Jan. 28–Apr. 14, 2026',
     context:
@@ -58,7 +58,10 @@ const caseStudies = [
         ['Reported charged leads', '49'],
         ['Illustrative value input', '$38,000 per full-time enrollment'],
         ['Scenario conversion rates', '20%, 30%, and 40%'],
-        ['Measurement boundary', 'Long-term modeled value, not recorded revenue']
+        [
+          'Measurement boundary',
+          'Long-term modeled value, not recorded revenue'
+        ]
       ],
       scenarios: [
         ['20%', 'Approximately 10', 'Approximately $380,000'],
@@ -76,13 +79,13 @@ const caseStudies = [
         }
       ],
       sourceNote:
-        'These sources provide broad U.S. childcare-cost context only. They do not establish Hearts and Minds tuition, enrollment duration, subsidy structure, retention, or revenue. Actual economics vary by program, child, market, capacity, and enrollment outcome.'
+        'These sources provide broad U.S. childcare-cost context only. They do not establish the childcare center’s tuition, enrollment duration, subsidy structure, retention, or revenue. Actual economics vary by program, child, market, capacity, and enrollment outcome.'
     }
   },
   {
-    id: 'leapfrog-roofing',
+    id: 'exterior-home-improvement',
     number: '02',
-    client: 'LeapFrog Roofing',
+    client: 'An Exterior Home-Improvement Contractor',
     category: 'Exterior home improvement / Google Local Services Ads',
     period: 'Feb.–Apr. 2026 statements',
     context:
@@ -121,7 +124,10 @@ const caseStudies = [
         ['Reported qualified charged leads', '38'],
         ['Illustrative blended value input', '$11,650 per completed job'],
         ['Scenario close rates', '20%, 30%, and 40%'],
-        ['Measurement boundary', 'Modeled completed-job value, not recorded revenue']
+        [
+          'Measurement boundary',
+          'Modeled completed-job value, not recorded revenue'
+        ]
       ],
       scenarios: [
         ['20%', 'Approximately 8', 'Approximately $93,200'],
@@ -143,7 +149,7 @@ const caseStudies = [
         }
       ],
       sourceNote:
-        'These sources provide broad U.S. project-price context only. They do not establish LeapFrog Roofing’s actual service mix, close rate, completed-job value, margins, revenue, capacity, geography, or financial outcome.'
+        'These sources provide broad U.S. project-price context only. They do not establish the contractor’s actual service mix, close rate, completed-job value, margins, revenue, capacity, geography, or financial outcome.'
     }
   }
 ];
@@ -249,7 +255,11 @@ function ModelDisclosure({ study }) {
                     rel="noreferrer"
                   >
                     <span>{source.label}</span>
-                    <ArrowUpRight size={15} strokeWidth={1.7} aria-hidden="true" />
+                    <ArrowUpRight
+                      size={15}
+                      strokeWidth={1.7}
+                      aria-hidden="true"
+                    />
                   </a>
                 </li>
               ))}
@@ -457,9 +467,10 @@ export default function ResultsPage() {
               <h3>Approved client testimonial pending.</h3>
 
               <p>
-                Replace this block only with an approved quotation, the
-                client’s permitted name and company context, and the related
-                system or service.
+                Replace this block only with an approved anonymous quotation,
+                industry-only attribution, and the related system or service.
+                Do not include client names, company names, or identifying
+                details.
               </p>
 
               <span className="results-proof-slot__code-note">
@@ -477,9 +488,11 @@ export default function ResultsPage() {
               <h3>Client video testimonial pending consent and production.</h3>
 
               <p>
-                Replace this block only after an approved video asset,
-                publication permission, accessible captions, and a transcript
-                are available.
+                Replace this block only after an approved anonymized video
+                asset, publication permission, accessible captions, and a
+                transcript are available. Use industry-only attribution and
+                exclude client names, company names, logos, and recognizable
+                identifiers from the asset, captions, and transcript.
               </p>
 
               <span className="results-proof-slot__code-note">
