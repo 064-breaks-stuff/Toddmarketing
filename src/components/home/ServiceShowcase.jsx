@@ -3,18 +3,30 @@ import { ArrowUpRight } from 'lucide-react';
 
 function ConversionVisual() {
   return (
-    <div className="service-showcase__visual service-showcase__visual--conversion">
-      <div className="service-showcase__browser">
-        <div className="service-showcase__browser-top">
-          <span />
-          <span />
-          <span />
+    <div className="service-showcase__computer" aria-hidden="true">
+      <div className="service-showcase__computer-screen">
+        <div className="service-showcase__computer-bezel">
+          <span className="service-showcase__computer-camera" />
         </div>
 
-        <div className="service-showcase__browser-title" />
-        <div className="service-showcase__browser-copy" />
-        <div className="service-showcase__browser-cta" />
-        <div className="service-showcase__browser-form" />
+        <div className="service-showcase__visual service-showcase__visual--conversion">
+          <div className="service-showcase__browser">
+            <div className="service-showcase__browser-top">
+              <span />
+              <span />
+              <span />
+            </div>
+
+            <div className="service-showcase__browser-title" />
+            <div className="service-showcase__browser-copy" />
+            <div className="service-showcase__browser-cta" />
+            <div className="service-showcase__browser-form" />
+          </div>
+        </div>
+      </div>
+
+      <div className="service-showcase__computer-base">
+        <span />
       </div>
     </div>
   );

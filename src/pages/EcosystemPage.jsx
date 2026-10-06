@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
 import SystemGrid from '../components/brand/SystemGrid';
-import PageRail from '../components/ui/PageRail';
 import Button from '../components/ui/Button';
 import { CONTACT_PATH, systemStages } from '../app/siteConfig';
 
@@ -242,33 +240,6 @@ export default function EcosystemPage() {
           </div>
         </div>
       </section>
-
-      <section className="ecosystem-explore-section">
-        <div className="container">
-          <p className="section-label">Continue through the system</p>
-
-          <div className="ecosystem-explore-section__links">
-            <Link to="/services">
-              <span>01</span>
-              <strong>See What’s Missing in Your Lead Flow</strong>
-              <ArrowUpRight size={20} aria-hidden="true" />
-            </Link>
-
-            <Link to={CONTACT_PATH}>
-              <span>02</span>
-              <strong>Plan Your Local Growth System</strong>
-              <ArrowUpRight size={20} aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <div className="container">
-        <PageRail
-          previous={{ label: 'Todd Marketing Home', to: '/' }}
-          next={{ label: 'Plan Your Local Growth System', to: CONTACT_PATH }}
-        />
-      </div>
     </>
   );
 }
