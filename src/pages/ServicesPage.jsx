@@ -345,7 +345,12 @@ export default function ServicesPage() {
     window.requestAnimationFrame(() => {
       document
         .getElementById('service-detail')
-        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        ?.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? 'auto'
+            : 'smooth',
+          block: 'start'
+        });
     });
   }, [location.hash, activeService.id]);
 
@@ -356,7 +361,12 @@ export default function ServicesPage() {
     window.requestAnimationFrame(() => {
       document
         .getElementById('service-detail')
-        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        ?.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? 'auto'
+            : 'smooth',
+          block: 'start'
+        });s
     });
   };
 

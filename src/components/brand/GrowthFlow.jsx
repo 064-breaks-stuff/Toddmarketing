@@ -33,12 +33,39 @@ function SystemPulse() {
   const [cycle, setCycle] = useState(0);
 
   useEffect(() => {
-    const interval = window.setInterval(() => {
-      setMessageIndex((current) => (current + 1) % statusMessages.length);
-      setCycle((current) => current + 1);
-    }, 7600);
+    const motionPreference = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    );
 
-    return () => window.clearInterval(interval);
+    let intervalId;
+
+    const stopCycle = () => {
+      if (intervalId !== undefined) {
+        window.clearInterval(intervalId);
+        intervalId = undefined;
+      }
+    };
+
+    const updateCycle = () => {
+      stopCycle();
+
+      if (motionPreference.matches) {
+        return;
+      }
+
+      intervalId = window.setInterval(() => {
+        setMessageIndex((current) => (current + 1) % statusMessages.length);
+        setCycle((current) => current + 1);
+      }, 7600);
+    };
+
+    updateCycle();
+    motionPreference.addEventListener('change', updateCycle);
+
+    return () => {
+      stopCycle();
+      motionPreference.removeEventListener('change', updateCycle);
+    };
   }, []);
 
   return (

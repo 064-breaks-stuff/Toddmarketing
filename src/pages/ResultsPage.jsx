@@ -167,7 +167,7 @@ function ModelDisclosure({ study }) {
         type="button"
         id={buttonId}
         aria-expanded={isOpen}
-        aria-controls={panelId}
+        aria-controls={isOpen ? panelId : undefined}
         onClick={() => setIsOpen((open) => !open)}
       >
         <span>
