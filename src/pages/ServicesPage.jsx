@@ -366,7 +366,7 @@ export default function ServicesPage() {
             ? 'auto'
             : 'smooth',
           block: 'start'
-        });s
+        });
     });
   };
 
