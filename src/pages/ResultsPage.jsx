@@ -19,6 +19,9 @@ const caseStudies = [
   {
     id: 'childcare',
     number: '01',
+    photoSrc: `${import.meta.env.BASE_URL}brand/2.png`,
+    photoAlt:
+      'Google Local Services Ads account screenshot showing $2,915.59 in lead spend and 49 charged leads from January 28 to April 14, 2026.',
     client: 'A Childcare Center',
     category: 'Childcare / Google Local Services Ads',
     period: 'Jan. 28–Apr. 14, 2026',
@@ -85,6 +88,11 @@ const caseStudies = [
   {
     id: 'exterior-home-improvement',
     number: '02',
+    photoSrc: `${import.meta.env.BASE_URL}brand/3.png`,
+    photoAlt:
+      'Google Local Services Ads account screenshot showing $4,089.33 in lead spend and 30 charged leads from March 16 to April 14, 2026.',
+    photoCaption:
+      'Account screenshot for March 16–April 14, 2026: $4,089.33 spend and 30 charged leads. This is a shorter reporting window than the February–April statements used for the case-study totals.',
     client: 'An Exterior Home-Improvement Contractor',
     category: 'Exterior home improvement / Google Local Services Ads',
     period: 'Feb.–Apr. 2026 statements',
@@ -360,6 +368,21 @@ export default function ResultsPage() {
                     <p>{study.summary}</p>
                   </div>
                 </div>
+
+                <figure className="results-case-study__photo">
+                  <div className="results-case-study__photo-frame">
+                    <img
+                      src={study.photoSrc}
+                      alt={study.photoAlt}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  {study.photoCaption && (
+                    <figcaption>{study.photoCaption}</figcaption>
+                  )}
+                </figure>
 
                 <div className="results-case-study__metrics">
                   {study.metrics.map((metric) => (

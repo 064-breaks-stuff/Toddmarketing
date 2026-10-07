@@ -2961,3 +2961,36 @@
     transition: none;
   }
 }
+
+/* Task 3 — Approved case-study account screenshots */
+.results-case-study__photo {
+  margin: 0;
+  padding:
+    0
+    clamp(1.4rem, 4vw, 3.5rem)
+    clamp(1.4rem, 4vw, 2rem);
+}
+
+.results-case-study__photo-frame {
+  width: 100%;
+  max-width: 48rem;
+  margin-inline: auto;
+  border: 1px solid var(--tm-line-light);
+  background: var(--tm-paper);
+}
+
+.results-case-study__photo-frame img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.results-case-study__photo figcaption {
+  max-width: 48rem;
+  margin: 0.85rem auto 0;
+  color: var(--tm-slate);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
