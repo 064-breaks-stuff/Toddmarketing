@@ -11,6 +11,8 @@ const bookingUrl =
 const founderVideoUrl =
   'https://youtu.be/ctXLUlwbZjY?si=oHy__BKjxsGzapbk';
 
+const operatingModelImageUrl = `${import.meta.env.BASE_URL}brand/1.png`;
+
 export default function AboutPage() {
   return (
     <>
@@ -114,6 +116,16 @@ export default function AboutPage() {
               Built for the connections between acquisition, conversion, and
               follow-through.
             </h2>
+
+            <div className="about-principles__image-wrap">
+              <img
+                className="about-principles__image"
+                src={operatingModelImageUrl}
+                alt="Inbound-lead automation workflow connecting a form submission to contact creation and a welcome email."
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
 
           <div className="about-principles__grid">
