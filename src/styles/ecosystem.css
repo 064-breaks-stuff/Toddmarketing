@@ -2994,3 +2994,10 @@
   line-height: 1.55;
   overflow-wrap: anywhere;
 }
+
+/* Task 5 — Black outer frames for How It Works visuals only */
+.process-stepper-section .process-visual {
+  border-color: #000;
+  outline: 3px solid #000;
+  outline-offset: -3px;
+}
