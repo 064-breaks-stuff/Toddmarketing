@@ -648,3 +648,13 @@
     animation: none;
   }
 }
+
+/* Task 2 — Lower footer only on the five specified pages */
+.site-footer--without-growth-cta {
+  padding-top: 2rem;
+  background: #101116;
+}
+
+.site-footer--without-growth-cta .site-footer__bottom {
+  padding-top: 0;
+}

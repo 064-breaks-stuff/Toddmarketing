@@ -1,26 +1,34 @@
 import { Link } from 'react-router-dom';
 import { CONTACT_PATH } from '../../app/siteConfig';
 
-export default function Footer() {
+export default function Footer({ showGrowthCta = true }) {
   return (
-    <footer className="site-footer">
+    <footer
+      className={
+        showGrowthCta
+          ? 'site-footer'
+          : 'site-footer site-footer--without-growth-cta'
+      }
+    >
       <div className="container">
-        <div className="site-footer__top">
-          <div>
-            <p className="site-footer__label">
-              Growth infrastructure for service businesses
-            </p>
+        {showGrowthCta && (
+          <div className="site-footer__top">
+            <div>
+              <p className="site-footer__label">
+                Growth infrastructure for service businesses
+              </p>
 
-            <h2>
-              Build the connected system behind your next stage of growth.
-            </h2>
+              <h2>
+                Build the connected system behind your next stage of growth.
+              </h2>
+            </div>
+
+            <Link className="site-footer__cta" to={CONTACT_PATH}>
+              Book a Growth Infrastructure Audit
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
-
-          <Link className="site-footer__cta" to={CONTACT_PATH}>
-            Book a Growth Infrastructure Audit
-            <span aria-hidden="true">→</span>
-          </Link>
-        </div>
+        )}
 
         <div className="site-footer__bottom">
           <div>

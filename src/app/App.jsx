@@ -17,12 +17,25 @@ import PrivacyPage from '../pages/PrivacyPage';
 import TermsPage from '../pages/TermsPage';
 import NotFoundPage from '../pages/NotFoundPage';
 
+const footerWithoutGrowthCtaRoutes = [
+  '/',
+  '/ecosystem',
+  '/services',
+  '/process',
+  '/results',
+];
+
 function AppShell() {
   const { pathname } = useLocation();
 
   const lightHeaderRoutes = ['/contact'];
 
   const darkMode = !lightHeaderRoutes.includes(pathname);
+
+  const normalizedPathname = pathname.replace(/\/+$/, '') || '/';
+
+  const showGrowthCta =
+    !footerWithoutGrowthCtaRoutes.includes(normalizedPathname);
 
   return (
     <div className={darkMode ? 'app-shell app-shell--dark' : 'app-shell'}>
@@ -54,7 +67,7 @@ function AppShell() {
         </Routes>
       </main>
 
-      <Footer />
+      <Footer showGrowthCta={showGrowthCta} />
     </div>
   );
 }
