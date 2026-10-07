@@ -12,9 +12,9 @@ const services = [
     eyebrow: 'Visibility & demand',
     title: 'Generate high-intent local demand.',
     summary:
-      'Bring the right people into the system through Google Search, Local Services Ads, local visibility, and campaign pages built to turn intent into a usable inquiry.',
+      'Reach local customers through Google Search, Local Services Ads, Google Business Profile, and campaign pages that support inquiries.',
     problem:
-      'You need more qualified demand, but you do not want activity that creates clicks without creating useful opportunities.',
+      'You need qualified opportunities, not just clicks.',
     includes: [
       'Google Ads and search-intent campaign management',
       'Local Services Ads strategy and operational support',
@@ -23,9 +23,9 @@ const services = [
       'Call, form, and source-tracking foundations'
     ],
     clientReceives: [
-      'A channel plan built around where high-intent customers search',
-      'Campaign and landing-page alignment around a specific conversion goal',
-      'A clearer view of which acquisition signals are producing usable leads'
+      'A channel plan focused on high-intent searches',
+      'Campaigns and landing pages aligned to a conversion goal',
+      'Visibility into which acquisition signals produce usable leads'
     ],
     systems: [
       'Google Ads',
@@ -35,7 +35,7 @@ const services = [
       'Tracking'
     ],
     bestFit:
-      'Businesses that need more qualified local demand and want acquisition connected to the conversion path and lead follow-up.',
+      'Businesses seeking qualified local demand connected to conversion and follow-up.',
     cta: 'Build My Demand System',
     diagram: 'demand'
   },
@@ -43,11 +43,11 @@ const services = [
     id: 'demand-capture',
     number: '02',
     eyebrow: 'Conversion',
-    title: 'Turn local search intent into a clear next step.',
+    title: 'Turn local search intent into action.',
     summary:
-      'Make it easier for high-intent prospects to find the business, understand the offer, call, submit, book, or start a conversation without unnecessary friction.',
+      'Help prospects find you, understand your offer, and call, submit a form, book, or chat.',
     problem:
-      'You are already getting attention, but too much demand leaks because the profile, website, landing page, calls, forms, and response path are disconnected.',
+      'Disconnected profiles, pages, calls, forms, and response paths waste existing demand.',
     includes: [
       'Google Business Profile optimization and conversion readiness',
       'Website and landing-page conversion paths',
@@ -56,9 +56,9 @@ const services = [
       'Lead-response workflow planning'
     ],
     clientReceives: [
-      'A more direct path from local search to action',
-      'Focused conversion experiences for services, locations, and campaigns',
-      'Lead details structured for a useful CRM handoff'
+      'A direct path from local search to action',
+      'Conversion paths for services, locations, and campaigns',
+      'Lead details ready for CRM handoff'
     ],
     systems: [
       'Google Business Profile',
@@ -68,7 +68,7 @@ const services = [
       'Lead capture'
     ],
     bestFit:
-      'Businesses with existing traffic or local visibility that are not converting enough of that attention into conversations, calls, or booked opportunities.',
+      'Businesses with traffic or local visibility that need more calls, conversations, or bookings.',
     cta: 'See What’s Missing in My Lead Flow',
     diagram: 'capture'
   },
@@ -78,9 +78,9 @@ const services = [
     eyebrow: 'Follow-up & growth',
     title: 'Connect marketing, follow-up, reputation, and reporting.',
     summary:
-      'Use GoHighLevel and connected workflows to make every lead easier to route, respond to, nurture, book, review, reactivate, and understand.',
+      'Connect lead routing, response, nurture, booking, review requests, reactivation, and reporting in GoHighLevel.',
     problem:
-      'Leads arrive, but ownership, response speed, booking, follow-up, reputation, and reporting depend too heavily on manual effort or disconnected tools.',
+      'Manual work and disconnected tools slow lead response, booking, follow-up, review requests, and reporting.',
     includes: [
       'GoHighLevel CRM and pipeline architecture',
       'Lead routing and speed-to-lead workflows',
@@ -89,9 +89,9 @@ const services = [
       'Visibility into lead source, status, and next action'
     ],
     clientReceives: [
-      'A lead process with clearer ownership and fewer missed handoffs',
-      'Automated follow-up that supports the team rather than replacing it',
-      'Pipeline and reporting context that connects marketing activity to outcomes'
+      'Clear lead ownership and fewer missed handoffs',
+      'Automated follow-up that supports—not replaces—your team',
+      'Pipeline and reporting context connecting marketing to outcomes'
     ],
     systems: [
       'GoHighLevel',
@@ -101,7 +101,7 @@ const services = [
       'Reporting'
     ],
     bestFit:
-      'Businesses that need their marketing, lead response, sales follow-up, reputation, and customer lifecycle activity to operate as one connected system.',
+      'Businesses connecting marketing, lead response, sales follow-up, reputation, and customer lifecycle workflows.',
     cta: 'Connect My Marketing and Follow-Up',
     diagram: 'automation'
   }
@@ -149,7 +149,7 @@ function DemandGenerationDiagram() {
         <div className="services-demand-map__filter">
           <span>Fit filter</span>
           <strong>Offer + location + intent</strong>
-          <small>Channel and message align before the opportunity enters.</small>
+          <small>Align channel and message before lead capture.</small>
         </div>
 
         <span className="services-demand-map__connector services-demand-map__connector--four" />
@@ -213,7 +213,7 @@ function DemandCaptureDiagram() {
         <div className="services-capture-map__decision">
           <span>Clear next step</span>
           <strong>Call · Form · Booking · Chat</strong>
-          <small>One action with less friction and stronger intent.</small>
+          <small>A clear action with less friction.</small>
         </div>
 
         <div className="services-capture-map__handoff">
@@ -383,15 +383,11 @@ export default function ServicesPage() {
             <div>
               <p className="hero__eyebrow">Todd Marketing / Services</p>
 
-              <h1>
-                Build the connected system behind your local growth.
-              </h1>
+              <h1>Build your connected local growth system.</h1>
 
               <p>
-                Todd Marketing helps quality service businesses get found,
-                convert demand, follow up, build reputation, and report on
-                outcomes—without treating every channel, page, lead, and
-                customer interaction as a separate problem.
+                We connect visibility, conversion, follow-up, reputation, and
+                reporting for service businesses.
               </p>
             </div>
 
@@ -403,12 +399,7 @@ export default function ServicesPage() {
                 Reporting
               </strong>
 
-              <p>
-                We can solve a single gap. But businesses that want sustainable
-                growth are best served by a connected system built across
-                visibility, demand, conversion, follow-up, reputation, and
-                reporting.
-              </p>
+              <p>Fix one gap or connect the full growth system.</p>
             </div>
           </div>
 
@@ -419,12 +410,9 @@ export default function ServicesPage() {
       <section className="services-starting-point">
         <div className="container">
           <div className="services-starting-point__intro">
-            <p className="section-label">Start with the real constraint</p>
+            <p className="section-label">Start with the constraint</p>
 
-            <h2>
-              You do not need to choose a disconnected deliverable before you
-              understand what is limiting the system.
-            </h2>
+            <h2>Find the constraint before choosing the work.</h2>
           </div>
 
           <div className="services-starting-point__grid">
@@ -438,11 +426,8 @@ export default function ServicesPage() {
               onClick={() => selectService(services[0])}
             >
               <span>01</span>
-              <strong>You need more qualified demand.</strong>
-              <small>
-                Build the local visibility and acquisition path that creates
-                useful opportunities.
-              </small>
+              <strong>You need qualified demand.</strong>
+              <small>Connect local visibility to useful opportunities.</small>
               <ChevronRight size={19} aria-hidden="true" />
             </button>
 
@@ -456,11 +441,8 @@ export default function ServicesPage() {
               onClick={() => selectService(services[1])}
             >
               <span>02</span>
-              <strong>You have leads, but demand is leaking.</strong>
-              <small>
-                Make it easier for searchers and visitors to take the next
-                step.
-              </small>
+              <strong>Attention is not becoming action.</strong>
+              <small>Help searchers and visitors take the next step.</small>
               <ChevronRight size={19} aria-hidden="true" />
             </button>
 
@@ -474,12 +456,9 @@ export default function ServicesPage() {
               onClick={() => selectService(services[2])}
             >
               <span>03</span>
-              <strong>
-                You need marketing, follow-up, and reputation connected.
-              </strong>
+              <strong>Marketing and follow-up need connecting.</strong>
               <small>
-                Give every lead and customer a clear owner, next step, and
-                visible outcome.
+                Clarify lead ownership, next actions, and outcomes.
               </small>
               <ChevronRight size={19} aria-hidden="true" />
             </button>
@@ -491,7 +470,6 @@ export default function ServicesPage() {
         className="services-switcher"
         aria-label="Todd Marketing services"
       >
-
         <div
           className="services-switcher__anchor"
           id="demand-generation"
@@ -543,7 +521,6 @@ export default function ServicesPage() {
             role="tabpanel"
             tabIndex="-1"
           >
-
             <div className="services-detail__head">
               <div>
                 <p className="section-label">
@@ -612,14 +589,9 @@ export default function ServicesPage() {
             <div className="services-detail__action">
               <div>
                 <p className="section-label">
-                  Choose the right starting point
+                  Choose your starting point
                 </p>
-                <p>
-                  We can solve a single gap. But businesses that want
-                  sustainable growth are best served by a connected system
-                  built across visibility, demand, conversion, follow-up,
-                  reputation, and reporting.
-                </p>
+                <p>Start with the gap limiting your growth.</p>
               </div>
 
               <Button to={CONTACT_PATH}>{activeService.cta}</Button>
@@ -631,17 +603,13 @@ export default function ServicesPage() {
       <section className="services-integrated-system">
         <div className="container">
           <div className="services-integrated-system__intro">
-            <p className="section-label">Why connected systems win</p>
+            <p className="section-label">Why connect the system</p>
 
-            <h2>
-              A stronger result is rarely created by one channel operating
-              alone.
-            </h2>
+            <h2>Connect the channels and handoffs.</h2>
 
             <p>
-              Visibility, demand generation, conversion paths, GoHighLevel
-              follow-up, review requests, and reporting become more useful when
-              the handoff between every stage is designed on purpose.
+              Connect visibility and demand to conversion, GoHighLevel
+              follow-up, review requests, and reporting.
             </p>
           </div>
 
@@ -680,7 +648,7 @@ export default function ServicesPage() {
         <div className="container">
           <div>
             <p className="section-label">Build from the constraint</p>
-            <h2>Plan the system behind your next stage of growth.</h2>
+            <h2>Plan your next stage of growth.</h2>
           </div>
 
           <Button to={CONTACT_PATH}>Plan My Local Growth System</Button>
