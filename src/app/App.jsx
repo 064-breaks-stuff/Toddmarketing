@@ -41,7 +41,7 @@ function AppShell() {
     <div className={darkMode ? 'app-shell app-shell--dark' : 'app-shell'}>
       <ScrollToTop />
       <Seo />
-      <Header darkMode={darkMode} />
+      <Header darkMode={true} />
 
       <main>
         <Routes>

@@ -16,6 +16,11 @@
   pointer-events: auto;
 }
 
+/* Keep the header readable over light and dark page sections */
+.site-header--dark {
+  background: #101116;
+}
+
 .brand-lockup {
   display: block;
   width: clamp(8.8rem, 11vw, 10.8rem);
