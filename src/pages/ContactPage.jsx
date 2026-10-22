@@ -41,10 +41,6 @@ export default function ContactPage() {
     <>
       <section className="contact-hero">
         <div className="container">
-          <Link className="back-link" to="/">
-            <span aria-hidden="true">←</span>
-            Return to Todd Marketing
-          </Link>
 
           <p className="hero__eyebrow">Todd Marketing / Contact</p>
 

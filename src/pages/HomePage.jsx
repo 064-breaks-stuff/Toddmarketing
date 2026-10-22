@@ -34,10 +34,7 @@ export default function HomePage() {
             <div className="hero__actions">
               <Button to={CONTACT_PATH}>Plan My Local Growth System</Button>
 
-              <Link className="hero__text-link" to="/ecosystem">
-                See the connected system
-                <span aria-hidden="true">↓</span>
-              </Link>
+              
             </div>
           </div>
 
@@ -204,15 +201,6 @@ export default function HomePage() {
               visibility, demand, conversion, follow-up, reputation, and
               reporting.
             </p>
-
-            <div className="integrated-growth-section__layers">
-              <span>Visibility</span>
-              <span>Demand</span>
-              <span>Conversion</span>
-              <span>Follow-Up</span>
-              <span>Reputation</span>
-              <span>Reporting</span>
-            </div>
 
             <Button to={CONTACT_PATH}>Plan My Local Growth System</Button>
           </div>

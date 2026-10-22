@@ -3,13 +3,13 @@ import { Play, ArrowUpRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import PageRail from '../components/ui/PageRail';
 import { CONTACT_PATH } from '../app/siteConfig';
-import samuelToddPortrait from '../images/samuel-todd-founder.jpeg';
+import samuelToddPortrait from '../images/samuel-todd-founder.png';
 
 const bookingUrl =
   'https://api.leadconnectorhq.com/widget/booking/3QmePKKqRKrOVCL5shcI';
 
 const founderVideoUrl =
-  'https://youtu.be/ctXLUlwbZjY?si=oHy__BKjxsGzapbk';
+  'https://www.youtube.com/watch?v=LhojYIMaTNM';
 
 const operatingModelImageUrl = `${import.meta.env.BASE_URL}brand/1.png`;
 
@@ -18,10 +18,6 @@ export default function AboutPage() {
     <>
       <section className="interior-hero about-hero">
         <div className="container">
-          <Link className="back-link back-link--light" to="/">
-            <span aria-hidden="true">←</span>
-            Return to Todd Marketing
-          </Link>
 
           <p className="hero__eyebrow">Todd Marketing / About</p>
 

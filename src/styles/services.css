@@ -2751,3 +2751,467 @@
     transition: none;
   }
 }
+
+/* Mobile responsiveness — coordinated pass */
+@media (max-width: 980px) {
+  .services-hero__layout > *,
+  .service-detail-hero__layout > *,
+  .services-detail__head > *,
+  .services-detail__grid > *,
+  .service-detail-build__list article > div {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .services-diagram,
+  .service-detail-hero .service-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .services-diagram__label,
+  .services-diagram__footer,
+  .service-visual__topline,
+  .service-visual__heading,
+  .service-visual__footer {
+    position: relative;
+    inset: auto;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    font-size: 0.65rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .services-demand-map,
+  .services-capture-map,
+  .services-lifecycle,
+  .demand-flow,
+  .wireflow,
+  .lifecycle {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    margin: 0;
+  }
+
+  .services-demand-map__source,
+  .services-demand-map__filter,
+  .services-demand-map__outcome,
+  .services-capture-map__entry,
+  .services-capture-map__decision,
+  .services-capture-map__handoff,
+  .demand-flow__input,
+  .demand-flow__filter,
+  .demand-flow__output,
+  .wireflow__source,
+  .wireflow__page,
+  .wireflow__action,
+  .wireflow__handoff {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 1rem;
+    transform: none;
+    overflow-wrap: anywhere;
+  }
+
+  .services-demand-map__connector,
+  .services-capture-map__connector,
+  .demand-flow__connector {
+    display: none;
+  }
+
+  .services-demand-map__filter,
+  .demand-flow__filter {
+    box-shadow: none;
+  }
+
+  .services-lifecycle__track,
+  .lifecycle__track {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .services-lifecycle__step,
+  .lifecycle__step {
+    min-width: 0;
+    min-height: 0;
+    padding: 0.85rem;
+    overflow-wrap: anywhere;
+  }
+
+  .services-lifecycle__loop,
+  .services-lifecycle__monitor,
+  .lifecycle__loop,
+  .lifecycle__monitor {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 0.85rem;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .services-lifecycle__loop > div,
+  .lifecycle__loop > div {
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .services-lifecycle__monitor > div,
+  .lifecycle__monitor > div {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .services-demand-map strong,
+  .services-capture-map strong,
+  .services-lifecycle strong,
+  .demand-flow strong,
+  .wireflow strong,
+  .lifecycle strong {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .services-demand-map small,
+  .services-capture-map small,
+  .services-lifecycle small,
+  .demand-flow small,
+  .wireflow small,
+  .lifecycle small,
+  .services-demand-map__outcome > div,
+  .demand-flow__output > div {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .services-demand-map span,
+  .services-capture-map span,
+  .services-lifecycle span,
+  .demand-flow span,
+  .wireflow span,
+  .lifecycle span {
+    font-size: 0.65rem;
+    line-height: 1.5;
+  }
+
+  .services-detail__systems span,
+  .services-switcher__tab {
+    overflow-wrap: anywhere;
+  }
+
+  .services-switcher__tab:focus-visible,
+  .services-starting-point__card:focus-visible {
+    outline: 2px solid #8facff;
+    outline-offset: -3px;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-hero,
+  .service-detail-hero {
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .services-hero h1,
+  .service-detail-hero__copy h1,
+  .services-detail__head h2,
+  .services-starting-point__intro h2,
+  .services-integrated-system__intro h2,
+  .services-page-cta h2 {
+    max-width: 100%;
+    font-size: clamp(2.3rem, 10vw, 3.8rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .services-starting-point,
+  .services-switcher,
+  .services-integrated-system,
+  .services-page-cta {
+    padding-block: 3.5rem;
+  }
+
+  .services-detail {
+    padding-top: 2.5rem;
+  }
+
+  .service-detail-mechanism__layout,
+  .service-detail-fit__layout,
+  .service-detail-problem__grid,
+  .service-detail-related__links,
+  .service-detail-cta .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-detail-mechanism__diagram {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-detail-mechanism__arrow {
+    transform: rotate(90deg);
+  }
+
+  .service-detail-build__list article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.65rem;
+  }
+}
+
+/* Mobile responsiveness — coordinated pass */
+@media (max-width: 980px) {
+  .services-hero__layout > *,
+  .service-detail-hero__layout > *,
+  .services-detail__head > *,
+  .services-detail__grid > *,
+  .service-detail-build__list article > div {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .services-diagram,
+  .service-detail-hero .service-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .services-diagram__label,
+  .services-diagram__footer,
+  .service-visual__topline,
+  .service-visual__heading,
+  .service-visual__footer {
+    position: relative;
+    inset: auto;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    font-size: 0.65rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .services-demand-map,
+  .services-capture-map,
+  .services-lifecycle,
+  .demand-flow,
+  .wireflow,
+  .lifecycle {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+    margin: 0;
+  }
+
+  .services-demand-map__source,
+  .services-demand-map__filter,
+  .services-demand-map__outcome,
+  .services-capture-map__entry,
+  .services-capture-map__decision,
+  .services-capture-map__handoff,
+  .demand-flow__input,
+  .demand-flow__filter,
+  .demand-flow__output,
+  .wireflow__source,
+  .wireflow__page,
+  .wireflow__action,
+  .wireflow__handoff {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 1rem;
+    transform: none;
+    overflow-wrap: anywhere;
+  }
+
+  .services-demand-map__connector,
+  .services-capture-map__connector,
+  .demand-flow__connector {
+    display: none;
+  }
+
+  .services-demand-map__filter,
+  .demand-flow__filter {
+    box-shadow: none;
+  }
+
+  .services-lifecycle__track,
+  .lifecycle__track {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .services-lifecycle__step,
+  .lifecycle__step {
+    min-width: 0;
+    min-height: 0;
+    padding: 0.85rem;
+    overflow-wrap: anywhere;
+  }
+
+  .services-lifecycle__loop,
+  .services-lifecycle__monitor,
+  .lifecycle__loop,
+  .lifecycle__monitor {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 0.85rem;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .services-lifecycle__loop > div,
+  .lifecycle__loop > div {
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .services-lifecycle__monitor > div,
+  .lifecycle__monitor > div {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .services-demand-map strong,
+  .services-capture-map strong,
+  .services-lifecycle strong,
+  .demand-flow strong,
+  .wireflow strong,
+  .lifecycle strong {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .services-demand-map small,
+  .services-capture-map small,
+  .services-lifecycle small,
+  .demand-flow small,
+  .wireflow small,
+  .lifecycle small,
+  .services-demand-map__outcome > div,
+  .demand-flow__output > div {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .services-demand-map span,
+  .services-capture-map span,
+  .services-lifecycle span,
+  .demand-flow span,
+  .wireflow span,
+  .lifecycle span {
+    font-size: 0.65rem;
+    line-height: 1.5;
+  }
+
+  .services-detail__systems span,
+  .services-switcher__tab {
+    overflow-wrap: anywhere;
+  }
+
+  .services-switcher__tab:focus-visible,
+  .services-starting-point__card:focus-visible {
+    outline: 2px solid #8facff;
+    outline-offset: -3px;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-hero,
+  .service-detail-hero {
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-bottom: 3.5rem;
+  }
+
+  .services-hero h1,
+  .service-detail-hero__copy h1,
+  .services-detail__head h2,
+  .services-starting-point__intro h2,
+  .services-integrated-system__intro h2,
+  .services-page-cta h2 {
+    max-width: 100%;
+    font-size: clamp(2.3rem, 10vw, 3.8rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .services-starting-point,
+  .services-switcher,
+  .services-integrated-system,
+  .services-page-cta {
+    padding-block: 3.5rem;
+  }
+
+  .services-detail {
+    padding-top: 2.5rem;
+  }
+
+  .service-detail-mechanism__layout,
+  .service-detail-fit__layout,
+  .service-detail-problem__grid,
+  .service-detail-related__links,
+  .service-detail-cta .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-detail-mechanism__diagram {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-detail-mechanism__arrow {
+    transform: rotate(90deg);
+  }
+
+  .service-detail-build__list article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.65rem;
+  }
+}

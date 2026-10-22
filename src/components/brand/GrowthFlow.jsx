@@ -126,7 +126,7 @@ export default function GrowthFlow() {
           </p>
 
           <div className="opportunity-relay__tags">
-            <span>Google Search</span>
+            
             <span>Google Business Profile</span>
             <span>Local Services</span>
           </div>
@@ -135,9 +135,7 @@ export default function GrowthFlow() {
         <section className="opportunity-relay__stage opportunity-relay__stage--system">
           <span className="opportunity-relay__index">02</span>
 
-          <div className="opportunity-relay__system-icon">
-            <SystemIcon />
-          </div>
+          
 
           <p className="opportunity-relay__eyebrow">
             Conversion and follow-up
@@ -156,7 +154,9 @@ export default function GrowthFlow() {
           <div className="opportunity-relay__tags">
             <span>Website + Funnel</span>
             <span>GoHighLevel</span>
-            <span>Automation</span>
+            <span>Tracking</span>
+            <span>n8n automations</span>
+            <span>Campaigns</span>
           </div>
         </section>
 

@@ -2382,3 +2382,209 @@
     height: 0.65rem;
   }
 }
+
+/* Mobile responsiveness — coordinated pass */
+@media (max-width: 980px) {
+  .hero__copy,
+  .friction-section__heading > *,
+  .system-section__intro > *,
+  .integrated-growth-section__inner > *,
+  .accountability-section__inner > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero h1,
+  .service-showcase__content h2,
+  .integrated-growth-section h2,
+  .accountability-section h2 {
+    max-width: 100%;
+    font-size: clamp(2.4rem, 10.5vw, 4rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .friction-section,
+  .system-section,
+  .integrated-growth-section,
+  .accountability-section {
+    padding-block: 3.5rem;
+  }
+
+  .system-accordion__title-group strong {
+    font-size: clamp(1.35rem, 6vw, 2.1rem);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .system-accordion__signals li,
+  .system-demo__badge,
+  .system-device__topbar > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .system-demo__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .system-demo__progression {
+    flex-wrap: wrap;
+  }
+
+  .opportunity-relay__content {
+    padding-bottom: 1.5rem;
+  }
+
+  .opportunity-relay__outcome {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .opportunity-relay__outcome-label {
+    position: static;
+    grid-column: 2;
+    align-self: center;
+  }
+
+  .opportunity-relay__outcome-icon {
+    grid-column: 1;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .opportunity-relay__outcome-icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .opportunity-relay__outcome-copy,
+  .opportunity-relay__outcome-status {
+    grid-column: 2;
+    min-width: 0;
+    padding-top: 0;
+  }
+
+  .opportunity-relay__outcome-copy h2 {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+    overflow-wrap: anywhere;
+  }
+
+  .opportunity-relay__copy,
+  .opportunity-relay__outcome-copy p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .opportunity-relay__footer {
+    position: relative;
+    inset: auto;
+    margin: 0 1rem 1rem;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+  }
+}
+
+/* Mobile responsiveness — coordinated pass */
+@media (max-width: 980px) {
+  .hero__copy,
+  .friction-section__heading > *,
+  .system-section__intro > *,
+  .integrated-growth-section__inner > *,
+  .accountability-section__inner > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero h1,
+  .service-showcase__content h2,
+  .integrated-growth-section h2,
+  .accountability-section h2 {
+    max-width: 100%;
+    font-size: clamp(2.4rem, 10.5vw, 4rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .friction-section,
+  .system-section,
+  .integrated-growth-section,
+  .accountability-section {
+    padding-block: 3.5rem;
+  }
+
+  .system-accordion__title-group strong {
+    font-size: clamp(1.35rem, 6vw, 2.1rem);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .system-accordion__signals li,
+  .system-demo__badge,
+  .system-device__topbar > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .system-demo__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .system-demo__progression {
+    flex-wrap: wrap;
+  }
+
+  .opportunity-relay__content {
+    padding-bottom: 1.5rem;
+  }
+
+  .opportunity-relay__outcome {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .opportunity-relay__outcome-label {
+    position: static;
+    grid-column: 2;
+    align-self: center;
+  }
+
+  .opportunity-relay__outcome-icon {
+    grid-column: 1;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .opportunity-relay__outcome-icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .opportunity-relay__outcome-copy,
+  .opportunity-relay__outcome-status {
+    grid-column: 2;
+    min-width: 0;
+    padding-top: 0;
+  }
+
+  .opportunity-relay__outcome-copy h2 {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+    overflow-wrap: anywhere;
+  }
+
+  .opportunity-relay__copy,
+  .opportunity-relay__outcome-copy p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .opportunity-relay__footer {
+    position: relative;
+    inset: auto;
+    margin: 0 1rem 1rem;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+  }
+}

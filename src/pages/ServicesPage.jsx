@@ -374,10 +374,6 @@ export default function ServicesPage() {
     <>
       <section className="services-hero">
         <div className="container">
-          <Link className="back-link back-link--light" to="/">
-            <span aria-hidden="true">←</span>
-            Return to Todd Marketing
-          </Link>
 
           <div className="services-hero__layout">
             <div>

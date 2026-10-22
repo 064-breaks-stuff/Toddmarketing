@@ -48,10 +48,6 @@ export default function EcosystemPage() {
         <SystemGrid />
 
         <div className="container ecosystem-hero__inner">
-          <Link className="back-link back-link--light" to="/">
-            <span aria-hidden="true">←</span>
-            Return to Todd Marketing
-          </Link>
 
           <p className="hero__eyebrow">The Todd Marketing Growth System</p>
 

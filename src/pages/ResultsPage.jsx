@@ -288,10 +288,6 @@ export default function ResultsPage() {
     <>
       <section className="interior-hero interior-hero--results">
         <div className="container">
-          <Link className="back-link back-link--light" to="/">
-            <span aria-hidden="true">←</span>
-            Return to Todd Marketing
-          </Link>
 
           <p className="hero__eyebrow">Todd Marketing / Results</p>
 
