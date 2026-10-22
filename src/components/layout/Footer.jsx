@@ -45,6 +45,17 @@ export default function Footer({ showGrowthCta = true }) {
             <p className="site-footer__location">
               Wisconsin-originated. Serving clients across the United States.
             </p>
+
+                        <a
+              className="site-footer__map-link"
+              href="https://share.google/RYwUVNS8hgC4Q4o31"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Todd Marketing on Google Maps (opens in a new tab)"
+            >
+              <span>View on Google Maps</span>
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
 
           <nav className="site-footer__links" aria-label="Footer navigation">

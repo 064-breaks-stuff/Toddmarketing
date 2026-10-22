@@ -102,9 +102,22 @@ export default function GoogleReviewsCarousel() {
             <h2 id={headingId}>In their own words.</h2>
           </div>
 
-          <p className="google-reviews__introduction">
-            Selected reviews of Sam and Social 1st Marketing.
-          </p>
+                    <div className="google-reviews__intro">
+            <p className="google-reviews__introduction">
+              Selected reviews of Sam and Social 1st Marketing.
+            </p>
+
+            <a
+              className="google-reviews__profile-link"
+              href="https://share.google/RYwUVNS8hgC4Q4o31"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read reviews on Google (opens in a new tab)"
+            >
+              <span>Read reviews on Google</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
 
         <p
