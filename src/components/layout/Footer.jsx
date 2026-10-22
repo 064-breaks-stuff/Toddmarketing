@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 import { CONTACT_PATH } from '../../app/siteConfig';
+import '../../styles/footer.css';
 
 export default function Footer({ showGrowthCta = true }) {
   return (
     <footer
-      className={
-        showGrowthCta
-          ? 'site-footer'
-          : 'site-footer site-footer--without-growth-cta'
-      }
+      className={`site-footer site-footer--refined${
+        showGrowthCta ? '' : ' site-footer--without-growth-cta'
+      }`}
     >
       <div className="container">
         {showGrowthCta && (
@@ -24,14 +23,14 @@ export default function Footer({ showGrowthCta = true }) {
             </div>
 
             <Link className="site-footer__cta" to={CONTACT_PATH}>
-              Book a Growth Infrastructure Audit
+              <span>Book a Growth Infrastructure Audit</span>
               <span aria-hidden="true">→</span>
             </Link>
           </div>
         )}
 
         <div className="site-footer__bottom">
-          <div>
+          <div className="site-footer__identity">
             <Link
               className="site-footer__brand"
               to="/"
@@ -56,18 +55,18 @@ export default function Footer({ showGrowthCta = true }) {
             <Link to="/about">About</Link>
             <Link to={CONTACT_PATH}>Contact</Link>
           </nav>
+        </div>
 
-          <div>
-            <p className="site-footer__meta">
-              © {new Date().getFullYear()} Social 1st Marketing DBA Todd
-              Marketing. All rights reserved.
-            </p>
+        <div className="site-footer__base">
+          <p className="site-footer__meta">
+            © {new Date().getFullYear()} Social 1st Marketing DBA Todd
+            Marketing. All rights reserved.
+          </p>
 
-            <div className="site-footer__legal">
-              <Link to="/privacy">Privacy Policy</Link>
-              <Link to="/terms">Terms of Use</Link>
-            </div>
-          </div>
+          <nav className="site-footer__legal" aria-label="Legal navigation">
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Use</Link>
+          </nav>
         </div>
       </div>
     </footer>
