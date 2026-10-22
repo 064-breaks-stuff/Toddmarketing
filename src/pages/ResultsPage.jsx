@@ -1,5 +1,4 @@
 import { useId, useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
   ArrowUpRight,
   ChevronDown,
@@ -7,12 +6,11 @@ import {
   CircleCheck,
   Database,
   FileText,
-  Play,
-  Quote,
   ShieldCheck
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import PageRail from '../components/ui/PageRail';
+import GoogleReviewsCarousel from '../components/ui/GoogleReviewsCarousel';
 import { CONTACT_PATH } from '../app/siteConfig';
 
 const caseStudies = [
@@ -463,64 +461,7 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      <section className="results-proof-slots-section">
-        <div className="container">
-          <div className="results-section-heading">
-            <p className="section-label">Proof library in progress</p>
-            <h2>Approved client proof will expand here.</h2>
-            <p>
-              These are intentional replacement slots. They do not represent
-              testimonials, endorsements, or video assets until approved client
-              material is added.
-            </p>
-          </div>
-
-          <div className="results-proof-slots">
-            <article className="results-proof-slot">
-              <Quote size={23} strokeWidth={1.5} aria-hidden="true" />
-
-              <p className="results-proof-slot__status">
-                Written testimonial slot
-              </p>
-
-              <h3>Approved client testimonial pending.</h3>
-
-              <p>
-                Replace this block only with an approved anonymous quotation,
-                industry-only attribution, and the related system or service.
-                Do not include client names, company names, or identifying
-                details.
-              </p>
-
-              <span className="results-proof-slot__code-note">
-                Internal replacement zone
-              </span>
-            </article>
-
-            <article className="results-proof-slot">
-              <Play size={23} strokeWidth={1.5} aria-hidden="true" />
-
-              <p className="results-proof-slot__status">
-                Video testimonial slot
-              </p>
-
-              <h3>Client video testimonial pending consent and production.</h3>
-
-              <p>
-                Replace this block only after an approved anonymized video
-                asset, publication permission, accessible captions, and a
-                transcript are available. Use industry-only attribution and
-                exclude client names, company names, logos, and recognizable
-                identifiers from the asset, captions, and transcript.
-              </p>
-
-              <span className="results-proof-slot__code-note">
-                Internal replacement zone
-              </span>
-            </article>
-          </div>
-        </div>
-      </section>
+      <GoogleReviewsCarousel />
 
       <section className="interior-cta-section results-cta-section">
         <div className="container">
