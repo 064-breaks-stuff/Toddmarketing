@@ -104,7 +104,7 @@ export default function GoogleReviewsCarousel() {
 
                     <div className="google-reviews__intro">
             <p className="google-reviews__introduction">
-              Selected reviews of Sam and Social 1st Marketing.
+              See what our clients have to say about us!
             </p>
 
             <a
