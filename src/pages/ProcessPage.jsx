@@ -1,5 +1,4 @@
 import { useId, useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
   ArrowRight,
