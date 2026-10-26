@@ -7,18 +7,6 @@ const statusMessages = [
   'Reputation and reporting / Loop visible'
 ];
 
-function SystemIcon() {
-  return (
-    <svg viewBox="0 0 64 64" aria-hidden="true">
-      <circle cx="16" cy="32" r="5" />
-      <circle cx="32" cy="16" r="5" />
-      <circle cx="32" cy="48" r="5" />
-      <circle cx="48" cy="32" r="5" />
-      <path d="M21 32h22M32 21v22M19.5 28.5 28.5 19.5M35.5 44.5l9-9M19.5 35.5l9 9M35.5 19.5l9 9" />
-    </svg>
-  );
-}
-
 function CalendarIcon() {
   return (
     <svg viewBox="0 0 48 48" aria-hidden="true">

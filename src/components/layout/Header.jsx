@@ -6,19 +6,18 @@ import Button from '../ui/Button';
 
 const priorityDesktopItems = ['Home', 'Services', 'How It Works', 'Results'];
 
-export default function Header({ darkMode }) {
+function HeaderContent({ darkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { pathname } = useLocation();
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
+    const previousOverflow = document.body.style.overflow;
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    }
 
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = previousOverflow;
     };
   }, [menuOpen]);
 
@@ -111,7 +110,9 @@ export default function Header({ darkMode }) {
           </nav>
 
           <div className="menu-overlay__footer">
-            <p>Wisconsin-originated. Serving clients across the United States.</p>
+            <p>
+              Wisconsin-originated. Serving clients across the United States.
+            </p>
 
             <Button to={CONTACT_PATH} onClick={() => setMenuOpen(false)}>
               Book a Growth Infrastructure Audit
@@ -121,4 +122,10 @@ export default function Header({ darkMode }) {
       </div>
     </header>
   );
+}
+
+export default function Header({ darkMode }) {
+  const { pathname } = useLocation();
+
+  return <HeaderContent key={pathname} darkMode={darkMode} />;
 }

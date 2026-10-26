@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowUpRight, Check, ChevronRight } from 'lucide-react';
 import Button from '../components/ui/Button';
@@ -323,58 +323,58 @@ function ServiceDiagram({ type }) {
   return <AutomationDiagram />;
 }
 
+function scrollToServiceDetail() {
+  document
+    .getElementById('service-detail')
+    ?.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? 'auto'
+        : 'smooth',
+      block: 'start'
+    });
+}
+
 export default function ServicesPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [activeService, setActiveService] = useState(services[0]);
+
+  const hashId = location.hash.replace('#', '');
+
+  const activeService =
+    services.find((service) => service.id === hashId) || services[0];
 
   const activeIndex = services.findIndex(
     (service) => service.id === activeService.id
   );
 
   useEffect(() => {
-    const hashId = location.hash.replace('#', '');
-    const matchingService = services.find((service) => service.id === hashId);
+    const selectedId = location.hash.replace('#', '');
 
-    if (!matchingService || matchingService.id === activeService.id) {
+    if (!services.some((service) => service.id === selectedId)) {
       return;
     }
 
-    setActiveService(matchingService);
+    const frameId = window.requestAnimationFrame(scrollToServiceDetail);
 
-    window.requestAnimationFrame(() => {
-      document
-        .getElementById('service-detail')
-        ?.scrollIntoView({
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-            ? 'auto'
-            : 'smooth',
-          block: 'start'
-        });
-    });
-  }, [location.hash, activeService.id]);
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
+  }, [location.hash]);
 
   const selectService = (service) => {
-    setActiveService(service);
-    navigate(`/services#${service.id}`, { replace: true });
+    const nextHash = `#${service.id}`;
 
-    window.requestAnimationFrame(() => {
-      document
-        .getElementById('service-detail')
-        ?.scrollIntoView({
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-            ? 'auto'
-            : 'smooth',
-          block: 'start'
-        });
-    });
+    navigate(`/services${nextHash}`, { replace: true });
+
+    if (location.hash === nextHash) {
+      window.requestAnimationFrame(scrollToServiceDetail);
+    }
   };
 
   return (
     <>
       <section className="services-hero">
         <div className="container">
-
           <div className="services-hero__layout">
             <div>
               <p className="hero__eyebrow">Todd Marketing / Services</p>
